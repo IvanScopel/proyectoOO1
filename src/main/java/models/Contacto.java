@@ -17,5 +17,10 @@ public class Contacto {
 		this.nombre = nombre;
 		this.apellido= apellido;
 	}
-
+	
+	public Contacto crearContacto(String dni, String email, String telefono, String nombre, String apellido) {
+		return new Contacto(dni,  email,  telefono,  nombre,  apellido);
+	}
+	
 }
+
