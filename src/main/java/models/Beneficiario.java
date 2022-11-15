@@ -6,13 +6,13 @@ public class Beneficiario {
 	private String direccion;
 	private int cantPersonas;
 	
-	private Beneficiario(String nombre, String direccion) {
+	private Beneficiario(String nombre, String direccion, int cantPersonas) {
 		this.nombre  = nombre;
 		this.direccion = direccion;
-		cantPersonas = 0;
+		this.cantPersonas = cantPersonas;
 	}
 
-	public Beneficiario altaBeneficiario(String nombre, String direccion) {
-		return new Beneficiario(nombre, direccion);
+	public Beneficiario altaBeneficiario(String nombre, String direccion, int cantPersonas) {
+		return new Beneficiario(nombre, direccion, cantPersonas);
 	}
 }

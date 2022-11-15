@@ -2,17 +2,20 @@ package models;
 
 import java.util.List;
 
-public class Contacto extends Persona {
+public class Contacto {
 
-	private String apellido;
+	private String dni;
+	private String email;
 	private String telefono;
+	private String nombre;
+	private String apellido;
 	
-	public Contacto(String nombre, String dni, String email, String apellido, String telefono) {
-		super(nombre, dni, email);
-		
-		this.apellido= apellido;
+	private Contacto(String dni, String email, String telefono, String nombre, String apellido) {
+		this.dni = dni;
+		this.email = email;
 		this.telefono= telefono;
-		
+		this.nombre = nombre;
+		this.apellido= apellido;
 	}
 
 }

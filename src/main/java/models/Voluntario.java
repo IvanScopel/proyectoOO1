@@ -1,18 +1,27 @@
 package models;
 
-public class Voluntario extends Persona {
+public class Voluntario {
 
-	private String whatsapp;
+	private String dni;
+	private String nombre;
+	private String email;
+	private String telefono;
 	private String direccion_estable;
+	private Vehiculo vehiculo;
 	
-	public Voluntario(String nombre, String dni, String email, String whatsapp, String direccion_estable) {
-		super(nombre, dni, email);
-		this.whatsapp = whatsapp;
+	
+	private Voluntario(String nombre, String dni, String email, String telefono, String direccion_estable, Vehiculo vehiculo) {
+		this.nombre = nombre;
+		this.dni = dni;
+		this.email = email;
+		this.telefono = telefono;
 		this.direccion_estable = direccion_estable;
-		
+		this.vehiculo = vehiculo;
 	}
-	public Voluntario altaVoluntario(String nombre, String dni, String email, String whatsapp, String direccion_estable) {
-		return new Voluntario(nombre,dni,email,whatsapp,direccion_estable);
+		
+	public Voluntario altaVoluntario(String nombre, String dni, String email, String whatsapp, String direccion_estable,Vehiculo vehiculo) {
+		return new Voluntario(nombre,dni,email,whatsapp,direccion_estable,vehiculo);
 	}
 
+	
 }
