@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Organizacion_Donante {
+public class OrganizacionDonante {
 
 	
 	private String razon_social;
@@ -13,7 +13,7 @@ public class Organizacion_Donante {
 	private List<Voluntario> voluntarios;
 	private List<Donacion> donaciones;
 	
-	private Organizacion_Donante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
+	private OrganizacionDonante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
 		this.razon_social = razon_social;
 		this.cuil = cuil;
 		this.direccion = direccion;
@@ -21,8 +21,8 @@ public class Organizacion_Donante {
 		this.donaciones = new ArrayList<Donacion>();
 	}
 	
-	public Organizacion_Donante altaOrganizacionDonante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
-		return new Organizacion_Donante(razon_social, cuil, direccion, contactos);
+	public OrganizacionDonante altaOrganizacionDonante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
+		return new OrganizacionDonante(razon_social, cuil, direccion, contactos);
 	}
 	
 	public Donacion agregarDonacion(Donacion donacion) {

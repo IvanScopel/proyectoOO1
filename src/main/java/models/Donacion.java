@@ -1,13 +1,17 @@
 package models;
 
-public abstract class Donacion {
+public class Donacion {
 	
 	private String estado;
 	private String fechaDisponible;
 	
-	public Donacion(String estado, String fechaDisponible) {
+	private Donacion(String estado, String fechaDisponible) {
 		this.estado=estado;
 		this.fechaDisponible=fechaDisponible;
+	}
+	
+	public Donacion crearDonacion(String estado, String fechaDisponible) {
+		return new Donacion(estado ,fechaDisponible);
 	}
 	
 	

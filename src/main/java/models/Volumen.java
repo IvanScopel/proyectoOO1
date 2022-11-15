@@ -11,5 +11,9 @@ public class Volumen {
 		this.Z = z;
 	}
 	
+	public Volumen altaVolumen(Float x, Float y, Float z) {
+		return new Volumen( x,  y,  z);
+	}
+	
 	
 }

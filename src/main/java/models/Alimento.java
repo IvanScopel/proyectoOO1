@@ -9,5 +9,9 @@ public class Alimento {
 		this.descripcion = descripcion;
 		this.kilos = kilos;
 	}
+	
+	public Alimento crearAlimento(String descripcion, double kilos) {
+		return new Alimento(descripcion,  kilos);
+	}
 
 }

@@ -18,7 +18,7 @@ public class Contacto {
 		this.apellido= apellido;
 	}
 	
-	public Contacto crearContacto(String dni, String email, String telefono, String nombre, String apellido) {
+	public Contacto altaContacto(String dni, String email, String telefono, String nombre, String apellido) {
 		return new Contacto(dni,  email,  telefono,  nombre,  apellido);
 	}
 	

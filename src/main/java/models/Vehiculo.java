@@ -13,5 +13,9 @@ public class Vehiculo {
 		this.volumen = volumen;
 	}
 	
+	public Vehiculo altaVehiculo(String marca, String modelo, String patente, Volumen volumen) {
+		return new Vehiculo( marca,  modelo,  patente,  volumen);
+	}
+	
 	
 }
