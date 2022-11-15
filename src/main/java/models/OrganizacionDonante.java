@@ -25,9 +25,16 @@ public class OrganizacionDonante {
 		return new OrganizacionDonante(razon_social, cuil, direccion, contactos);
 	}
 	
-	public Donacion agregarDonacion(Donacion donacion) {
+	public void altaContacto(Contacto contacto) {
+		contactos.add(contacto);
+	}
+	
+	public void altaDonacion(Donacion donacion) {
 		donaciones.add(donacion);
-		return donacion;
+	}
+	
+	public void altaVoluntario(Voluntario voluntario) {
+		voluntarios.add(voluntario);
 	}
 	
 }

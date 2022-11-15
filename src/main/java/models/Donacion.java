@@ -10,7 +10,7 @@ public class Donacion {
 		this.fechaDisponible=fechaDisponible;
 	}
 	
-	public Donacion crearDonacion(String estado, String fechaDisponible) {
+	public Donacion altaDonacion(String estado, String fechaDisponible) {
 		return new Donacion(estado ,fechaDisponible);
 	}
 	

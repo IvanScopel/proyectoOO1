@@ -10,7 +10,7 @@ public class Detallada extends Descripcion {
 		this.productos = productos;
 	}
 	
-	public Detallada crearDescripcionDetallada(String estado, String fechaDisponible, List<Producto> productos) {
+	public Detallada altaDescripcionDetallada(String estado, String fechaDisponible, List<Producto> productos) {
 		return new Detallada(estado, fechaDisponible, productos);
 	}
 }
