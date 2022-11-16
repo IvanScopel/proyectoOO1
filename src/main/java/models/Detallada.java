@@ -2,7 +2,7 @@ package models;
 
 import java.util.List;
 
-public class Detallada extends Descripcion {
+public class Detallada implements Descripcion {
 	
 	private List<Alimento> alimentos;
 	
@@ -10,9 +10,7 @@ public class Detallada extends Descripcion {
 		this.alimentos = alimento;
 	}
 	
-	public Detallada altaDescripcionDetallada(String estado, String fechaDisponible, List<Alimento> alimento) {
-		return new Detallada(estado, fechaDisponible, alimento);
-	}
+	
 	
 	public void altaAlimento(Alimento alimento) {
 		alimentos.add(alimento);

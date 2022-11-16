@@ -1,6 +1,6 @@
 package models;
 
-public class General extends Descripcion {
+public class General implements Descripcion {
 	
 	private Volumen volumen;
 	private String caracteristicas;
@@ -9,11 +9,6 @@ public class General extends Descripcion {
 		
 		this.volumen=volumen;
 		this.caracteristicas=caracteristicas;
-	}
-
-
-	public General crearDescripcionGeneral(String estado, String fechaDisponible, Volumen volumen, String caracteristicas) {
-		return new General(volumen, caracteristicas);
 	}
 
 
