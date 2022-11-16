@@ -10,7 +10,7 @@ public class Alimento {
 		this.kilos = kilos;
 	}
 	
-	public Alimento crearAlimento(String descripcion, double kilos) {
+	public Alimento altaAlimento(String descripcion, double kilos) {
 		return new Alimento(descripcion,  kilos);
 	}
 

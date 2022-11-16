@@ -4,13 +4,17 @@ import java.util.List;
 
 public class Detallada extends Descripcion {
 	
-	private List<Producto> productos;
+	private List<Alimento> alimentos;
 	
-	private Detallada(String estado, String fechaDisponible, List<Producto> productos) {
-		this.productos = productos;
+	private Detallada(String estado, String fechaDisponible, List<Alimento> alimento) {
+		this.alimentos = alimento;
 	}
 	
-	public Detallada altaDescripcionDetallada(String estado, String fechaDisponible, List<Producto> productos) {
-		return new Detallada(estado, fechaDisponible, productos);
+	public Detallada altaDescripcionDetallada(String estado, String fechaDisponible, List<Alimento> alimento) {
+		return new Detallada(estado, fechaDisponible, alimento);
+	}
+	
+	public void altaAlimento(Alimento alimento) {
+		alimentos.add(alimento);
 	}
 }
