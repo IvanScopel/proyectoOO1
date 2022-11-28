@@ -17,5 +17,7 @@ public class Vehiculo {
 		return new Vehiculo( marca,  modelo,  patente,  volumen);
 	}
 	
-	
+	public double getVolumen() {
+		return volumen.getVolumen();
+	}
 }

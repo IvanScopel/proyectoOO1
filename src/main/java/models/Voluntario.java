@@ -22,6 +22,11 @@ public class Voluntario {
 	public Voluntario altaVoluntario(String nombre, String dni, String email, String whatsapp, String direccion_estable,Vehiculo vehiculo) {
 		return new Voluntario(nombre,dni,email,whatsapp,direccion_estable,vehiculo);
 	}
-
+	
+	public Vehiculo getVehiculo(){
+		
+		if(vehiculo!=null) return vehiculo;
+		return null;
+	}
 	
 }

@@ -37,4 +37,27 @@ public class OrganizacionDonante {
 		voluntarios.add(voluntario);
 	}
 	
+	//retorna un listado con los voluntarios con vehiculos
+	private List<Voluntario> voluntariosConVehiculo(){
+		List<Voluntario> lista = new ArrayList<Voluntario>();
+		for(Voluntario voluntario :voluntarios) {
+			if(voluntario.getVehiculo() != null) {
+				lista.add(voluntario);
+			}
+		}
+		return lista;
+	}
+	
+	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
+	public List<Voluntario> voluntariosParaTraslado(Volumen volumen){
+		List<Voluntario>lista = voluntariosConVehiculo();
+		for(Voluntario voluntario :voluntarios) {
+			if((voluntario.getVehiculo()).getVolumen() >= volumen.getVolumen()) {
+				lista.add(voluntario);
+			}
+		}
+		return lista;
+	}
+	
+	
 }
