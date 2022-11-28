@@ -9,4 +9,8 @@ public class Producto {
 		this.alimento = alimento;
 		this.cantidad = cantidad;
 	}
+	
+	public Producto altaProducto(Alimento alimento, int cantidad) {
+		return new Producto(alimento, cantidad);
+	}
 }

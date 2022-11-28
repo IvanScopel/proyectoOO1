@@ -2,17 +2,23 @@ package models;
 
 import java.util.List;
 
-public class Detallada implements Descripcion {
+public class DescripcionDetallada implements Descripcion {
 	
-	private List<Alimento> alimentos;
+	private List<Producto> productos;
 	
-	private Detallada(String estado, String fechaDisponible, List<Alimento> alimento) {
-		this.alimentos = alimento;
+	private DescripcionDetallada(List<Producto> productos) {
+		this.productos = productos;
+	}
+	
+	//Crea un detalle y lo retorna
+	public DescripcionDetallada altaDescripcionDetallada(List<Producto> productos) {
+		return new DescripcionDetallada(productos );
 	}
 	
 	
-	
-	public void altaAlimento(Alimento alimento) {
-		alimentos.add(alimento);
+	//agrega un alimento a la lista de alimentos
+	public void altaAlimento(Producto producto) {
+		productos.add(producto);
 	}
+	
 }
