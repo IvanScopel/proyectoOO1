@@ -15,6 +15,7 @@ public class Volumen {
 		return new Volumen( x,  y,  z);
 	}
 	
+	//retorna el volumen de un prisma rectangular
 	public double getVolumen() {
 		return x*y*z;
 	}
