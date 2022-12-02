@@ -1,4 +1,4 @@
-package proyectoOO1;
+package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
