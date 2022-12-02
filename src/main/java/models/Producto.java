@@ -17,4 +17,5 @@ public class Producto {
 	public Producto altaProducto(String descripcion, double kilos, int cantidad) {
 		return new Producto(descripcion, kilos, cantidad);
 	}
+
 }

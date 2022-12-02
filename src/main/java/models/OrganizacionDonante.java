@@ -52,13 +52,14 @@ public class OrganizacionDonante {
 	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
 	public List<Voluntario> voluntariosParaTraslado(Volumen volumen){
 		List<Voluntario>lista = voluntariosConVehiculo();
-		for(Voluntario voluntario :voluntarios) {
-			if((voluntario.getVehiculo()).getVolumen() >= volumen.getVolumen()) {
-				lista.add(voluntario);
+		for(Voluntario voluntario :lista) {
+			if((voluntario.getVehiculo()).getVolumen() < volumen.getVolumen()) {
+				lista.remove(voluntario);
 			}
 		}
 		return lista;
 	}
+
 	
 	
 }

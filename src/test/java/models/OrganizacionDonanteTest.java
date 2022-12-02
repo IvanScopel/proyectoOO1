@@ -2,6 +2,9 @@ package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,10 +16,12 @@ import models.Voluntario;
 public class OrganizacionDonanteTest {
 	
 	private OrganizacionDonante orgDonante;
+	
 	private Voluntario voluntario1;
 	private Voluntario voluntario2;
 	private Voluntario voluntario3;
 	private Voluntario voluntario4;
+	private List<Voluntario> esperado=new ArrayList<Voluntario>();;
 	
 	private Vehiculo vehiculo;
 	private Volumen volumen;
@@ -25,22 +30,28 @@ public class OrganizacionDonanteTest {
 	public void setup() {
 		
 		
-		this.volumen = volumen.altaVolumen(4.0, 5.0, 6.0);
-		this.vehiculo = this.vehiculo.altaVehiculo("Fiat", "Torino", "abc123", volumen);
+		volumen = new Volumen(4.0, 5.0, 6.0);
+		vehiculo = new Vehiculo("Fiat", "Torino", "abc123", volumen);
 		
-		this.voluntario1 = this.voluntario1.altaVoluntario("Asd", "1234", "a@a", "1234", "", null);
-		this.voluntario2 = this.voluntario2.altaVoluntario("Asd", "1234", "a@a", "1234", "", vehiculo);
+		voluntario1 = new Voluntario("Asd", "1234", "a@a", "1234", "", null);
+		voluntario2 = new Voluntario("Asd", "1234", "a@a", "1234", "", vehiculo);
 
-		this.orgDonante = this.orgDonante.altaOrganizacionDonante("Walmart", "0000", "5 y 48");
+		orgDonante = new OrganizacionDonante("Walmart", "0000", "5 y 48");
 		
 		orgDonante.altaVoluntario(voluntario1);
 		orgDonante.altaVoluntario(voluntario2);
-
+		//le asigno al voluntario2 quien es el que posee el vehiculo y comparo con el resultado del metodo
+		esperado.add(voluntario2);
 	}
 	
 	@Test
 	public void testVoluntariosConVehiculo() {
-		assertEquals(1, this.orgDonante.voluntariosParaTraslado(volumen).size());
-		}
+		assertEquals(1, orgDonante.voluntariosParaTraslado(volumen).size());
+		assertIterableEquals(esperado, orgDonante.voluntariosParaTraslado(volumen));
+		
+		
+	}
+	
+	
 
 }
