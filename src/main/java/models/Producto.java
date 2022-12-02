@@ -8,7 +8,7 @@ public class Producto {
 	
 	
 	
-	private Producto(String descripcion, double kilos, int cantidad) {
+	public Producto(String descripcion, double kilos, int cantidad) {
 		this.descripcion=descripcion;
 		this.kilos=kilos;
 		this.cantidad = cantidad;

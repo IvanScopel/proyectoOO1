@@ -5,7 +5,7 @@ public class Volumen {
 	private double y;
 	private double z;
 	
-	private Volumen(double x, double y, double z) {
+	public Volumen(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;

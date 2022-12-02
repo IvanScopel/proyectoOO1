@@ -6,7 +6,7 @@ public class Beneficiario {
 	private String direccion;
 	private int cantPersonas;
 	
-	private Beneficiario(String nombre, String direccion, int cantPersonas) {
+	public Beneficiario(String nombre, String direccion, int cantPersonas) {
 		this.nombre  = nombre;
 		this.direccion = direccion;
 		this.cantPersonas = cantPersonas;

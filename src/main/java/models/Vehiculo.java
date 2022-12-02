@@ -6,7 +6,7 @@ public class Vehiculo {
 	private String patente;
 	private Volumen volumen;
 	
-	private Vehiculo(String marca, String modelo, String patente, Volumen volumen) {
+	public Vehiculo(String marca, String modelo, String patente, Volumen volumen) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.patente = patente;

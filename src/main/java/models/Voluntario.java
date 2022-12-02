@@ -10,7 +10,7 @@ public class Voluntario {
 	private Vehiculo vehiculo;
 	
 	
-	private Voluntario(String nombre, String dni, String email, String telefono, String direccion_estable, Vehiculo vehiculo) {
+	public Voluntario(String nombre, String dni, String email, String telefono, String direccion_estable, Vehiculo vehiculo) {
 		this.nombre = nombre;
 		this.dni = dni;
 		this.email = email;

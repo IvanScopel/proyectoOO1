@@ -6,7 +6,7 @@ public class DescripcionDetallada implements Descripcion {
 	
 	private List<Producto> productos;
 	
-	private DescripcionDetallada(List<Producto> productos) {
+	public DescripcionDetallada(List<Producto> productos) {
 		this.productos = productos;
 	}
 	

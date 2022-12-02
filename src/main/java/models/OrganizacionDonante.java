@@ -13,7 +13,7 @@ public class OrganizacionDonante {
 	private List<Voluntario> voluntarios;
 	private List<Donacion> donaciones;
 	
-	private OrganizacionDonante(String razon_social, String cuil, String direccion) {
+	public OrganizacionDonante(String razon_social, String cuil, String direccion) {
 		this.razon_social = razon_social;
 		this.cuil = cuil;
 		this.direccion = direccion;

@@ -6,7 +6,7 @@ public class Donacion {
 	private String fechaDisponible;
 	private Descripcion descripcion;
 	
-	private Donacion(String estado, String fechaDisponible, Descripcion descripcion) {
+	public Donacion(String estado, String fechaDisponible, Descripcion descripcion) {
 		this.estado=estado;
 		this.fechaDisponible=fechaDisponible;
 		this.descripcion=descripcion;

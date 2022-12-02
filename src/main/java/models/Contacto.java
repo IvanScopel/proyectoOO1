@@ -10,7 +10,7 @@ public class Contacto {
 	private String nombre;
 	private String apellido;
 	
-	private Contacto(String dni, String email, String telefono, String nombre, String apellido) {
+	public Contacto(String dni, String email, String telefono, String nombre, String apellido) {
 		this.dni = dni;
 		this.email = email;
 		this.telefono= telefono;
