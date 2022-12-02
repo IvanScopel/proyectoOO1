@@ -2,15 +2,19 @@ package models;
 
 public class Producto {
 
-	private Alimento alimento;
+	private String descripcion;
+	private double kilos;
 	private int cantidad;
 	
-	private Producto(Alimento alimento, int cantidad) {
-		this.alimento = alimento;
+	
+	
+	private Producto(String descripcion, double kilos, int cantidad) {
+		this.descripcion=descripcion;
+		this.kilos=kilos;
 		this.cantidad = cantidad;
 	}
 	
-	public Producto altaProducto(Alimento alimento, int cantidad) {
-		return new Producto(alimento, cantidad);
+	public Producto altaProducto(String descripcion, double kilos, int cantidad) {
+		return new Producto(descripcion, kilos, cantidad);
 	}
 }

@@ -1,17 +1,17 @@
 package models;
 
 public class Volumen {
-	private Float x;
-	private Float y;
-	private Float z;
+	private double x;
+	private double y;
+	private double z;
 	
-	private Volumen(Float x, Float y, Float z) {
+	private Volumen(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
-	public Volumen altaVolumen(Float x, Float y, Float z) {
+	public Volumen altaVolumen(double x, double y, double z) {
 		return new Volumen( x,  y,  z);
 	}
 	

@@ -13,16 +13,17 @@ public class OrganizacionDonante {
 	private List<Voluntario> voluntarios;
 	private List<Donacion> donaciones;
 	
-	private OrganizacionDonante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
+	private OrganizacionDonante(String razon_social, String cuil, String direccion) {
 		this.razon_social = razon_social;
 		this.cuil = cuil;
 		this.direccion = direccion;
 		this.contactos = new ArrayList<Contacto>();
 		this.donaciones = new ArrayList<Donacion>();
+		this.voluntarios = new ArrayList<Voluntario>();
 	}
 	
-	public OrganizacionDonante altaOrganizacionDonante(String razon_social, String cuil, String direccion, List<Contacto> contactos) {
-		return new OrganizacionDonante(razon_social, cuil, direccion, contactos);
+	public OrganizacionDonante altaOrganizacionDonante(String razon_social, String cuil, String direccion) {
+		return new OrganizacionDonante(razon_social, cuil, direccion);
 	}
 	
 	public void altaContacto(Contacto contacto) {
