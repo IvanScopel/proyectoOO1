@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class OrganizacionDonante {
 
@@ -41,22 +42,20 @@ public class OrganizacionDonante {
 	//retorna un listado con los voluntarios con vehiculos
 	private List<Voluntario> voluntariosConVehiculo(){
 		List<Voluntario> lista = new ArrayList<Voluntario>();
-		for(Voluntario voluntario :voluntarios) {
-			if(voluntario.getVehiculo() != null) {
-				lista.add(voluntario);
-			}
-		}
+		voluntarios.stream().forEach((p)-> {
+			if(p.getVehiculo() != null) {
+				lista.add(p);}});	
 		return lista;
 	}
 	
 	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
 	public List<Voluntario> voluntariosParaTraslado(Volumen volumen){
 		List<Voluntario>lista = voluntariosConVehiculo();
-		for(Voluntario voluntario :lista) {
-			if((voluntario.getVehiculo()).getVolumen() < volumen.getVolumen()) {
-				lista.remove(voluntario);
-			}
-		}
+		
+		lista.stream().forEach((p)-> {
+			if((p.getVehiculo()).getVolumen() < volumen.getVolumen()) {
+				lista.remove(p);
+			}});
 		return lista;
 	}
 
