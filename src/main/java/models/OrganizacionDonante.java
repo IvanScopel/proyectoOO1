@@ -29,8 +29,10 @@ public class OrganizacionDonante {
 		contactos.add(contacto);
 	}
 	
-	public void altaDonacion(Donacion donacion) {
+	public Donacion altaDonacion(Donacion donacion) {
+		donacion.cambiarEstado("pendiente de retiro");
 		donaciones.add(donacion);
+		return donacion;
 	}
 	
 	public void altaVoluntario(Voluntario voluntario) {
@@ -57,6 +59,4 @@ public class OrganizacionDonante {
 		return lista;
 	}
 
-	
-	
 }

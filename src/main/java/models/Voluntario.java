@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Voluntario {
 
 	private String dni;
@@ -8,7 +11,7 @@ public class Voluntario {
 	private String telefono;
 	private String direccion_estable;
 	private Vehiculo vehiculo;
-	
+	private List<Traslado> traslados;
 	
 	public Voluntario(String nombre, String dni, String email, String telefono, String direccion_estable, Vehiculo vehiculo) {
 		this.nombre = nombre;
@@ -17,6 +20,7 @@ public class Voluntario {
 		this.telefono = telefono;
 		this.direccion_estable = direccion_estable;
 		this.vehiculo = vehiculo;
+		this.traslados = new ArrayList<Traslado>();
 	}
 		
 	
