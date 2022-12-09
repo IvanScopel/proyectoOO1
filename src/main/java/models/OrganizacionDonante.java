@@ -23,9 +23,7 @@ public class OrganizacionDonante {
 		this.voluntarios = new ArrayList<Voluntario>();
 	}
 	
-	public OrganizacionDonante altaOrganizacionDonante(String razon_social, String cuil, String direccion) {
-		return new OrganizacionDonante(razon_social, cuil, direccion);
-	}
+	
 	
 	public void altaContacto(Contacto contacto) {
 		contactos.add(contacto);

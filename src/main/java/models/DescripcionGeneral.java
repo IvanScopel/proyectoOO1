@@ -11,8 +11,6 @@ public class DescripcionGeneral implements Descripcion {
 		this.caracteristicas=caracteristicas;
 	}
 	
-	public DescripcionGeneral altaDescripcionGeneral(Volumen volumen, String caracteristicas) {
-		return new DescripcionGeneral(volumen, caracteristicas);
-	}
+	
 
 }

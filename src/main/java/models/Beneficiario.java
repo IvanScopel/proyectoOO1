@@ -12,7 +12,5 @@ public class Beneficiario {
 		this.cantPersonas = cantPersonas;
 	}
 
-	public Beneficiario altaBeneficiario(String nombre, String direccion, int cantPersonas) {
-		return new Beneficiario(nombre, direccion, cantPersonas);
-	}
+	
 }

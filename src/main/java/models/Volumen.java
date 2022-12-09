@@ -11,9 +11,7 @@ public class Volumen {
 		this.z = z;
 	}
 	
-	public Volumen altaVolumen(double x, double y, double z) {
-		return new Volumen( x,  y,  z);
-	}
+	
 	
 	//retorna el volumen de un prisma rectangular
 	public double getVolumen() {

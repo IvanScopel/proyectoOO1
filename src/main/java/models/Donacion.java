@@ -12,9 +12,7 @@ public class Donacion {
 		this.descripcion=descripcion;
 	}
 	
-	public Donacion altaDonacion(String estado, String fechaDisponible, Descripcion descripcion) {
-		return new Donacion(estado ,fechaDisponible, descripcion);
-	}
+	
 	
 	
 }

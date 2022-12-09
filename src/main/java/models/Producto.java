@@ -3,19 +3,15 @@ package models;
 public class Producto {
 
 	private String descripcion;
-	private double kilos;
+	private double kilosXUnidad;
 	private int cantidad;
 	
 	
 	
 	public Producto(String descripcion, double kilos, int cantidad) {
 		this.descripcion=descripcion;
-		this.kilos=kilos;
+		this.kilosXUnidad=kilos;
 		this.cantidad = cantidad;
 	}
 	
-	public Producto altaProducto(String descripcion, double kilos, int cantidad) {
-		return new Producto(descripcion, kilos, cantidad);
-	}
-
 }
