@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class OrganizacionDonante {
@@ -40,7 +41,7 @@ public class OrganizacionDonante {
 	}
 	
 	//retorna un listado con los voluntarios con vehiculos
-	private List<Voluntario> voluntariosConVehiculo(){
+	private List<Voluntario> getVoluntariosConVehiculo(){
 		List<Voluntario> lista = new ArrayList<Voluntario>();
 		voluntarios.stream().forEach((p)-> {
 			if(p.getVehiculo() != null) {
@@ -49,14 +50,20 @@ public class OrganizacionDonante {
 	}
 	
 	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
-	public List<Voluntario> voluntariosParaTraslado(Volumen volumen){
-		List<Voluntario>lista = voluntariosConVehiculo();
+	public List<Voluntario> getVoluntariosParaTraslado(Volumen volumen){
+		List<Voluntario>lista = getVoluntariosConVehiculo();
 		
 		lista.stream().forEach((p)-> {
 			if((p.getVehiculo()).getVolumen() < volumen.getVolumen()) {
 				lista.remove(p);
 			}});
 		return lista;
+	}
+	
+	//retorna la lista de todas las donaciones o envios que se encuentran en traslado
+	//para que una donacion se encuentre en estado "en traslado", si o si tiene que estar asignada a un traslado, por ende tmb a un envio
+	public List<Traslado> getTrasladosPendientesTotal(){
+		 return voluntarios.stream().flatMap(each -> each.getTrasladosPendientes().stream()).collect(Collectors.toList());
 	}
 
 }

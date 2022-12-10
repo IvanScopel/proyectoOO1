@@ -1,7 +1,9 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Voluntario {
 
@@ -28,6 +30,17 @@ public class Voluntario {
 	public Vehiculo getVehiculo(){
 		if(vehiculo!=null) return vehiculo;
 		return null;
+	}
+	
+	public void asignarTraslado(Envio envio, String comentario, Date fechaTraslado) {
+		Traslado nuevoTraslado = new Traslado(comentario,envio, fechaTraslado);
+		traslados.add(nuevoTraslado);
+		nuevoTraslado.cambiarEstadoDeEnvio("en traslado");
+	}
+	
+	public List<Traslado> getTrasladosPendientes(){
+		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "pendiente de retiro").collect(Collectors.toList());
+		 
 	}
 	
 }

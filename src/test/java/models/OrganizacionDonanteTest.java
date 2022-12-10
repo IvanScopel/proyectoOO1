@@ -46,8 +46,8 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testVoluntariosConVehiculo() {
-		assertEquals(1, orgDonante.voluntariosParaTraslado(volumen).size());
-		assertIterableEquals(esperado, orgDonante.voluntariosParaTraslado(volumen));
+		assertEquals(1, orgDonante.getVoluntariosParaTraslado(volumen).size());
+		assertIterableEquals(esperado, orgDonante.getVoluntariosParaTraslado(volumen));
 		
 		
 	}

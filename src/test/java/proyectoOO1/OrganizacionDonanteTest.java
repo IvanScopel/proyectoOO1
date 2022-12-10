@@ -39,7 +39,7 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testVoluntariosConVehiculo() {
-		assertEquals(1, this.orgDonante.voluntariosParaTraslado(volumen).size());
+		assertEquals(1, this.orgDonante.getVoluntariosParaTraslado(volumen).size());
 		}
 
 }

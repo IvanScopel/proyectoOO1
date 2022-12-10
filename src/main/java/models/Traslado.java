@@ -16,4 +16,17 @@ public class Traslado {
 		this.envio = envio;
 	}
 	
+	public void cambiarEstadoDeEnvio(String estado){
+		envio.cambiarEstado(estado);
+	}
+	
+	public void confirmarTraslado() {
+		envio.cambiarEstado("entregado");
+	}
+
+	public Envio getEnvio() {
+		return envio;
+	}
+	
+	
 }

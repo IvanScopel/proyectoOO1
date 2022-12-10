@@ -18,8 +18,8 @@ public class Beneficiario {
 	}
 
 	
-	public void altaEnvio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen) {
-		envios.add(new Envio(productos, donacion, volumen));
+	public void altaEnvio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ResumenEnvio resumenEnvio) {
+		envios.add(new Envio(productos, donacion, volumen, resumenEnvio));
 		
 	}
 }
