@@ -14,7 +14,7 @@ public class Envio {
 	private int id;
 	
 	//constructor
-	public Envio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ArrayList<ResumenEnvio> resumenEnvio) {
+	public Envio(List<Producto> productos, Donacion donacion, Volumen volumen, List<ResumenEnvio> resumenEnvio) {
 		this.productos = productos;
 		this.donacion = donacion;
 		this.volumen = volumen;
@@ -43,7 +43,22 @@ public class Envio {
 	
 	public double obtenerElPesoDelEnvio() {
 		return resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum();
-		
-		 
 	}
+	//para test---------------------------------------
+	public Donacion getDonacion() {
+		return donacion;
+	}
+	public List<Producto> getProductos() {
+		return productos;
+	}
+	public Volumen getVolumen() {
+		return volumen;
+	}
+
+	public List<ResumenEnvio> getResumenEnvio() {
+		return resumenEnvio;
+	}
+	
+	
+	
 }
