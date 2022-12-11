@@ -55,13 +55,15 @@ class BeneficiarioTest {
 	
 	@BeforeEach
 	public void setup() {
-		//ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ArrayList<ResumenEnvio> resumenEnvio
-		producto1=new Producto("calle 48", 48);
-		producto2=new Producto("calle 64", 64);
-		producto3=new Producto("calle 135", 135);
-		producto4=new Producto("calle 524", 524);
-		producto5=new Producto("calle 22", 22);
+		
+		producto1=new Producto("pan", 48);
+		producto2=new Producto("chorizo", 64);
+		producto3=new Producto("huevo", 135);
+		producto4=new Producto("bondiola", 524);
+		producto5=new Producto("salmon", 22);
 		//----------------------------------------------
+		lista1=new ArrayList<Producto>();
+		lista2=new ArrayList<Producto>();
 		//productos con final par
 		lista1.add(producto2);
 		lista1.add(producto4);
@@ -89,6 +91,9 @@ class BeneficiarioTest {
 		resumen5=new ResumenEnvio("salmon",9.4);
 		resumen6=new ResumenEnvio("carbon",23.6);
 		//-------------------------------listados de resumenes ------
+		listaResumen1=new ArrayList<ResumenEnvio>();
+		listaResumen2=new ArrayList<ResumenEnvio>();
+		//----------------
 		listaResumen1.add(resumen1);
 		listaResumen1.add(resumen2);
 		listaResumen1.add(resumen6);
@@ -104,7 +109,8 @@ class BeneficiarioTest {
 	
 	@Test
 	public void testAltaEnvio(){
-		benefi1.altaEnvio(null, donacion1, volumen1, null);
+		benefi1.altaEnvio(lista1, donacion1, volumen1, listaResumen1);
+		benefi2.altaEnvio(null, donacion1, volumen1, null);
 	}
 
 }
