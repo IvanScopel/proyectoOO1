@@ -9,11 +9,11 @@ public class Envio {
 	private Donacion donacion;
 	private Volumen volumen;
 	private String estado;
-	private ResumenEnvio resumenEnvio; 
+	private List<ResumenEnvio> resumenEnvio; 
 	private static int contador;
 	private int id;
 	
-	public Envio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ResumenEnvio resumenEnvio) {
+	public Envio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ArrayList<ResumenEnvio> resumenEnvio) {
 		this.productos = productos;
 		this.donacion = donacion;
 		this.volumen = volumen;
@@ -33,5 +33,11 @@ public class Envio {
 	
 	public String getEstado() {
 		return estado;
+	}
+	
+	public double obtenerElPesoDelEnvio() {
+		return resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum();
+		
+		 
 	}
 }

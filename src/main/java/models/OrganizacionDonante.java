@@ -65,5 +65,11 @@ public class OrganizacionDonante {
 	public List<Traslado> getTrasladosPendientesTotal(){
 		 return voluntarios.stream().flatMap(each -> each.getTrasladosPendientes().stream()).collect(Collectors.toList());
 	}
+	
+	//
+	public int asignarPuntos(Envio envio, double kilometros) {
+		return (int)(envio.obtenerElPesoDelEnvio()*kilometros);
+				
+	}
 
 }

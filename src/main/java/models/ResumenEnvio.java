@@ -10,4 +10,11 @@ public class ResumenEnvio {
 		this.descripcion = descripcion;
 		this.kilos = kilos;
 	}
+
+
+	public Double getKilos() {
+		return kilos;
+	}
+	
+	
 }
