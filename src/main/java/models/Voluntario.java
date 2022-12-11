@@ -32,11 +32,13 @@ public class Voluntario {
 		return null;
 	}
 	
+	//asigna un envio y su respectivo comentario a el voluntario
 	public void asignarTraslado(Envio envio, String comentario, Date fechaTraslado) {
 		Traslado nuevoTraslado = new Traslado(comentario,envio, fechaTraslado);
 		traslados.add(nuevoTraslado);
 		nuevoTraslado.cambiarEstadoDeEnvio("en traslado");
 	}
+	
 	
 	public List<Traslado> getTrasladosPendientes(){
 		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "pendiente de retiro").collect(Collectors.toList());
