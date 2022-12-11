@@ -50,7 +50,8 @@ class BeneficiarioTest {
 	private List<ResumenEnvio> listaResumen1;
 	private List<ResumenEnvio> listaResumen2;
 	
-	
+	private Beneficiario benefi1;
+	private Beneficiario benefi2;
 	
 	@BeforeEach
 	public void setup() {
@@ -81,12 +82,29 @@ class BeneficiarioTest {
 		general1=new DescripcionGeneral(volumen1,"caracteristicas");
 		donacion1=new Donacion("estado", fechaDisponible3,general1);
 		//--------------------------------------------resumen--------
+		resumen1=new ResumenEnvio("pan", 15.3);
+		resumen2=new ResumenEnvio("chorizo", 4.0);
+		resumen3=new ResumenEnvio("huevo",6.0);
+		resumen4=new ResumenEnvio("bondiola",65.5);
+		resumen5=new ResumenEnvio("salmon",9.4);
+		resumen6=new ResumenEnvio("carbon",23.6);
+		//-------------------------------listados de resumenes ------
+		listaResumen1.add(resumen1);
+		listaResumen1.add(resumen2);
+		listaResumen1.add(resumen6);
+		//-------------------
+		listaResumen2.add(resumen3);
+		listaResumen2.add(resumen4);
+		listaResumen2.add(resumen5);
+	    //--------------------------------crear beneficiarios-------
+		benefi1=new Beneficiario("cara sucia", "la plata 1900", 6);
+		benefi2=new Beneficiario("copa de leche", "berisso", 26);
 		
 	}
 	
 	@Test
 	public void testAltaEnvio(){
-		
+		benefi1.altaEnvio(null, donacion1, volumen1, null);
 	}
 
 }
