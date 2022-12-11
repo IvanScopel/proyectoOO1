@@ -40,7 +40,7 @@ public class OrganizacionDonanteTest {
 		
 		orgDonante.altaVoluntario(voluntario1);
 		orgDonante.altaVoluntario(voluntario2);
-		//le asigno al voluntario2 quien es el que posee el vehiculo y comparo con el resultado del metodo
+		//le asigno a esperado al voluntario2 quien es el que posee el vehiculo y comparo con el resultado del metodo
 		esperado.add(voluntario2);
 	}
 	
