@@ -13,6 +13,7 @@ public class Envio {
 	private static int contador;
 	private int id;
 	
+	//constructor
 	public Envio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ArrayList<ResumenEnvio> resumenEnvio) {
 		this.productos = productos;
 		this.donacion = donacion;
@@ -24,13 +25,18 @@ public class Envio {
 		
 	};
 	
+	//
 	public void cambiarEstado(String estado) {
-		this.estado = estado;
+		 this.setEstado(estado);
 		if (donacion != null) {
 			donacion.cambiarEstado(estado);
 		}
 	}
 	
+	private void setEstado(String estado) {
+		this.estado = estado;
+	}
+
 	public String getEstado() {
 		return estado;
 	}

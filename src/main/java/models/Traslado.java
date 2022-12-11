@@ -8,6 +8,7 @@ public class Traslado {
 	private Date fechaTraslado;
 	private Date trasladoEfectuado;
 	private Envio envio;
+	
 	//el volumen lo saca de envio
 	public Traslado(String comentario, Envio envio, Date fechaTraslado) {
 		this.comentario = comentario;

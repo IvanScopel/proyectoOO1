@@ -14,9 +14,14 @@ public class Donacion {
 		this.descripcion=descripcion;
 	}
 	
-	
-	public void cambiarEstado(String estado) {
+	//setter
+	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	//cambia el estado de la donacion
+	public void cambiarEstado(String estado) {
+		this.setEstado(estado);
 	}
 	
 

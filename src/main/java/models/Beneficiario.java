@@ -17,7 +17,7 @@ public class Beneficiario {
 		envios = new ArrayList<Envio>();
 	}
 
-	
+	//crea un envio y lo agrega al listdo de envios de la organizacion
 	public void altaEnvio(ArrayList<Producto> productos, Donacion donacion, Volumen volumen, ArrayList<ResumenEnvio> resumenEnvio) {
 		envios.add(new Envio(productos, donacion, volumen, resumenEnvio));
 		

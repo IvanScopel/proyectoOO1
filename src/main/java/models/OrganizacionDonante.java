@@ -25,22 +25,24 @@ public class OrganizacionDonante {
 	}
 	
 	
-	
+	//agrega un contacto a el listado de contacto de la organizacion
 	public void altaContacto(Contacto contacto) {
 		contactos.add(contacto);
 	}
 	
+	//una organizacion da de alta una donacion y le establece su estado
 	public Donacion altaDonacion(Donacion donacion) {
 		donacion.cambiarEstado("pendiente de retiro");
 		donaciones.add(donacion);
 		return donacion;
 	}
 	
+	//agrega un voluntario a el listado de voluntarios de la organizacion
 	public void altaVoluntario(Voluntario voluntario) {
 		voluntarios.add(voluntario);
 	}
 	
-	//retorna un listado con los voluntarios con vehiculos
+	//retorna un listado con los voluntarios que posean vehiculos
 	private List<Voluntario> getVoluntariosConVehiculo(){
 		List<Voluntario> lista = new ArrayList<Voluntario>();
 		voluntarios.stream().forEach((p)-> {
@@ -60,13 +62,14 @@ public class OrganizacionDonante {
 		return lista;
 	}
 	
-	//retorna la lista de todas las donaciones o envios que se encuentran en traslado
+	
+	//retorna la lista de todas las donaciones o envios que se encuentran en "pendiente de retiro"
 	//para que una donacion se encuentre en estado "en traslado", si o si tiene que estar asignada a un traslado, por ende tmb a un envio
 	public List<Traslado> getTrasladosPendientesTotal(){
 		 return voluntarios.stream().flatMap(each -> each.getTrasladosPendientes().stream()).collect(Collectors.toList());
 	}
 	
-	//
+	//Asigna puntos a una organizacion dado el peso del envio multiplicado los kilometros
 	public int asignarPuntos(Envio envio, double kilometros) {
 		return (int)(envio.obtenerElPesoDelEnvio()*kilometros);
 				
