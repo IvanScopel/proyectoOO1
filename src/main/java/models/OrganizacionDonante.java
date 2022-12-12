@@ -14,6 +14,8 @@ public class OrganizacionDonante {
 	private List<Contacto> contactos;
 	private List<Voluntario> voluntarios;
 	private List<Donacion> donaciones;
+	private List<Insignia> insignias;
+	private Integer puntuacion;
 	
 	public OrganizacionDonante(String razon_social, String cuil, String direccion) {
 		this.razon_social = razon_social;
@@ -22,6 +24,7 @@ public class OrganizacionDonante {
 		this.contactos = new ArrayList<Contacto>();
 		this.donaciones = new ArrayList<Donacion>();
 		this.voluntarios = new ArrayList<Voluntario>();
+		this.puntuacion = 0;
 	}
 	
 	
@@ -70,8 +73,16 @@ public class OrganizacionDonante {
 	}
 	
 	//Asigna puntos a una organizacion dado el peso del envio 
-	public int asignarPuntos(Traslado traslado){
-		return  (int) Math.ceil(traslado.getDistancia());		
+	public void asignarPuntos(Traslado traslado){
+		puntuacion += (int) Math.ceil(traslado.getDistancia());		
+	}
+	
+	public List<Voluntario> top10Voluntarios(){
+		return voluntarios.stream().sorted((v1, v2) -> v1.getPuntuacion().compareTo(v2.getPuntuacion())).limit(10).collect(Collectors.toList());
+	}
+	
+	public void agregarInsignia(Insignia insignia) {
+		insignias.add(insignia);
 	}
 
 }

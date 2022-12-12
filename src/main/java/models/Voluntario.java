@@ -14,6 +14,8 @@ public class Voluntario {
 	private String direccion_estable;
 	private Vehiculo vehiculo;
 	private List<Traslado> traslados;
+	private List<Insignia> insignias;
+	private int puntuacion;
 	
 	public Voluntario(String nombre, String dni, String email, String telefono, String direccion_estable, Vehiculo vehiculo) {
 		this.nombre = nombre;
@@ -23,6 +25,7 @@ public class Voluntario {
 		this.direccion_estable = direccion_estable;
 		this.vehiculo = vehiculo;
 		this.traslados = new ArrayList<Traslado>();
+		this.puntuacion = 0;
 	}
 		
 	
@@ -30,6 +33,10 @@ public class Voluntario {
 	public Vehiculo getVehiculo(){
 		if(vehiculo!=null) return vehiculo;
 		return null;
+	}
+	
+	public Integer getPuntuacion() {
+		return puntuacion;
 	}
 	
 	//asigna un envio y su respectivo comentario a el voluntario
@@ -46,8 +53,8 @@ public class Voluntario {
 	}
 	
 	//Asigna puntos a una organizacion dado el peso del envio 
-		public int asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
-			return  (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
+		public void asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
+			puntuacion += (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
 		}
 	
 }
