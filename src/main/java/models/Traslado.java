@@ -8,13 +8,14 @@ public class Traslado {
 	private Date fechaTraslado;
 	private Date trasladoEfectuado;
 	private Envio envio;
-	
+	private Double distancia;
 	//el volumen lo saca de envio
-	public Traslado(String comentario, Envio envio, Date fechaTraslado) {
+	public Traslado(String comentario, Envio envio, Date fechaTraslado, Double distancia) {
 		this.comentario = comentario;
 		this.fechaAsignacion = new Date();
 		this.fechaTraslado = fechaTraslado;
 		this.envio = envio;
+		this.distancia= distancia;
 	}
 	
 	public void cambiarEstadoDeEnvio(String estado){
@@ -28,6 +29,12 @@ public class Traslado {
 	public Envio getEnvio() {
 		return envio;
 	}
+	
+	//test
+	public Double getDistancia() {
+		return distancia;
+	}
+	
 	
 	
 }

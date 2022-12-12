@@ -33,8 +33,8 @@ public class Voluntario {
 	}
 	
 	//asigna un envio y su respectivo comentario a el voluntario
-	public void asignarTraslado(Envio envio, String comentario, Date fechaTraslado) {
-		Traslado nuevoTraslado = new Traslado(comentario,envio, fechaTraslado);
+	public void asignarTraslado(Envio envio, String comentario, Date fechaTraslado, double distancia) {
+		Traslado nuevoTraslado = new Traslado(comentario,envio, fechaTraslado,distancia);
 		traslados.add(nuevoTraslado);
 		nuevoTraslado.cambiarEstadoDeEnvio("en traslado");
 	}
@@ -44,5 +44,10 @@ public class Voluntario {
 		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "pendiente de retiro").collect(Collectors.toList());
 		 
 	}
+	
+	//Asigna puntos a una organizacion dado el peso del envio 
+		public int asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
+			return  (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
+		}
 	
 }

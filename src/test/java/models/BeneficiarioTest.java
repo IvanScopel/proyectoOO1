@@ -104,6 +104,8 @@ class BeneficiarioTest {
 	    //--------------------------------crear beneficiarios-------
 		benefi1=new Beneficiario("cara sucia", "la plata 1900", 6);
 		benefi2=new Beneficiario("copa de leche", "berisso", 26);
+		
+		volumen1=new Volumen(1.0, 4.0, 9.50);
 		//crea un envio y lo agrega a la lista de envios----------
 		benefi1.altaEnvio(lista1, donacion1, volumen1, listaResumen1);
 		benefi2.altaEnvio(lista2, donacion2, volumen2, listaResumen2);
@@ -114,12 +116,20 @@ class BeneficiarioTest {
 	public void testAltaEnvio(){
 		//aux
 		Envio ultimoElementoBenefi1=benefi1.getEnvios().get(benefi1.getEnvios().size()-1);
+		Envio ultimoElementoBenefi2=benefi2.getEnvios().get(benefi2.getEnvios().size()-1);
 		//se probo qye la lista de productos posee los productos agregados
 		assertEquals(ultimoElementoBenefi1.getProductos().get(ultimoElementoBenefi1.getProductos().size()-1),producto4);
+		assertEquals(ultimoElementoBenefi2.getProductos().get(0),producto1);
+		assertNotEquals(ultimoElementoBenefi1.getProductos().get(ultimoElementoBenefi1.getProductos().size()-1),producto2);
+		
 		//se probo que la donacion es la misma
 		assertEquals(ultimoElementoBenefi1.getDonacion(), donacion1);
-		//se probo que volumen se alla agregdo bien
+		assertNull(ultimoElementoBenefi2.getDonacion());
+		
+		//se probo que volumen se alla agregado bien
 		assertEquals(ultimoElementoBenefi1.getVolumen(),volumen1);
+		assertNull(ultimoElementoBenefi2.getVolumen());
+		
 		//se probo que listaResumen se alla agragado bien
 		assertEquals(ultimoElementoBenefi1.getResumenEnvio().get(ultimoElementoBenefi1.getResumenEnvio().size()-1),resumen6);
 		

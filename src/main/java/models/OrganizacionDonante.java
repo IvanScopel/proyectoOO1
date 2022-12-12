@@ -69,10 +69,9 @@ public class OrganizacionDonante {
 		 return voluntarios.stream().flatMap(each -> each.getTrasladosPendientes().stream()).collect(Collectors.toList());
 	}
 	
-	//Asigna puntos a una organizacion dado el peso del envio multiplicado los kilometros
-	public int asignarPuntos(Envio envio, double kilometros) {
-		return (int)(envio.obtenerElPesoDelEnvio()*kilometros);
-				
+	//Asigna puntos a una organizacion dado el peso del envio 
+	public int asignarPuntos(Traslado traslado){
+		return  (int) Math.ceil(traslado.getDistancia());		
 	}
 
 }
