@@ -46,23 +46,27 @@ public class OrganizacionDonante {
 	}
 	
 	//retorna un listado con los voluntarios que posean vehiculos
-	private List<Voluntario> getVoluntariosConVehiculo(){
+	public List<Voluntario> getVoluntariosConVehiculo(){
 		List<Voluntario> lista = new ArrayList<Voluntario>();
 		voluntarios.stream().forEach((p)-> {
-			if(p.getVehiculo() != null) {
-				lista.add(p);}});	
+			if((p.getVehiculo())!=null) {
+				lista.add(p);}});
+		
 		return lista;
 	}
 	
 	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
 	public List<Voluntario> getVoluntariosParaTraslado(Volumen volumen){
 		List<Voluntario>lista = getVoluntariosConVehiculo();
+		List<Voluntario>aux = new ArrayList<Voluntario>();
 		
-		lista.stream().forEach((p)-> {
-			if((p.getVehiculo()).getVolumen() < volumen.getVolumen()) {
-				lista.remove(p);
-			}});
-		return lista;
+		lista.stream().forEach(x -> {
+			if(x.getVehiculo().getVolumen() < volumen.getVolumen()) {
+				aux.add(x);
+		}	
+		});
+		
+		return aux;
 	}
 	
 	

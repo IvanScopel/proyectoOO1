@@ -11,11 +11,6 @@ import org.junit.jupiter.api.Test;
 
 class BeneficiarioTest {
 	
-	//private String nombre;
-	//private String direccion;
-	//private int cantPersonas;
-	//private List<Envio> envios;
-	
 	private Producto producto1;
 	private Producto producto2;
 	private Producto producto3;
@@ -52,6 +47,9 @@ class BeneficiarioTest {
 	
 	private Beneficiario benefi1;
 	private Beneficiario benefi2;
+	
+	private ResumenEnvio listaResumenEsperada;
+	private List<Producto> listaEsperada;
 	
 	@BeforeEach
 	public void setup() {
@@ -109,7 +107,6 @@ class BeneficiarioTest {
 		//crea un envio y lo agrega a la lista de envios----------
 		benefi1.altaEnvio(lista1, donacion1, volumen1, listaResumen1);
 		benefi2.altaEnvio(lista2, donacion2, volumen2, listaResumen2);
-		
 	}
 	
 	@Test

@@ -28,7 +28,7 @@ public class Envio {
 	//
 	public void cambiarEstado(String estado) {
 		 this.setEstado(estado);
-		if (donacion != null) {
+		if (this.donacion != null) {
 			donacion.cambiarEstado(estado);
 		}
 	}
@@ -42,7 +42,7 @@ public class Envio {
 	}
 	
 	public double obtenerElPesoDelEnvio() {
-		return resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum();
+		return Math.round(resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum() * 100.0) / 100.0;
 	}
 	//para test---------------------------------------
 	public Donacion getDonacion() {
@@ -54,7 +54,6 @@ public class Envio {
 	public Volumen getVolumen() {
 		return volumen;
 	}
-
 	public List<ResumenEnvio> getResumenEnvio() {
 		return resumenEnvio;
 	}
