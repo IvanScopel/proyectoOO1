@@ -31,8 +31,7 @@ public class Voluntario {
 	
 	//retorna si posee vehiculo en caso contrario retorna null
 	public Vehiculo getVehiculo(){
-		if(vehiculo!=null) return vehiculo;
-		return null;
+		return vehiculo;
 	}
 	
 	public Integer getPuntuacion() {
@@ -46,9 +45,9 @@ public class Voluntario {
 		nuevoTraslado.cambiarEstadoDeEnvio("en traslado");
 	}
 	
-	
+	//------------------------------
 	public List<Traslado> getTrasladosPendientes(){
-		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "pendiente de retiro").collect(Collectors.toList());
+		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "en traslado").collect(Collectors.toList());
 		 
 	}
 	
@@ -56,5 +55,12 @@ public class Voluntario {
 		public void asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
 			puntuacion += (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
 		}
+
+
+		public List<Traslado> getTraslados() {
+			return traslados;
+		}
+		
+		
 	
 }

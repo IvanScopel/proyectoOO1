@@ -68,7 +68,7 @@ public class OrganizacionDonanteTest {
 	}
 	
 	@Test
-	public void testVoluntariosConVehiculo() {
+	public void testGetVoluntariosConVehiculo() {
 		assertArrayEquals(esperado.toArray(), orgDonante.getVoluntariosConVehiculo().toArray());
 	}
 	
@@ -77,6 +77,10 @@ public class OrganizacionDonanteTest {
 		assertArrayEquals(esperado2.toArray(), orgDonante.getVoluntariosParaTraslado(volumenSolicitado).toArray());
 	}
 	
+	@Test
+	public void testGetTrasladosPendientesTotal() {
+	//	assertArrayEquals(,orgDonante.getTrasladosPendientesTotal().toArray());
+	}
 	
 
 }
