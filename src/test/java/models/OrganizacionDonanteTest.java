@@ -32,8 +32,15 @@ public class OrganizacionDonanteTest {
 	private Volumen volumen3;
 	private Volumen volumenSolicitado;
 	
+	private Envio envio1;
+	private Envio envio2;
+	private Envio envio3;
+	private Envio envio4;
+	
+
 	@BeforeEach
 	public void setup() {
+		
 		
 		
 		volumen1 = new Volumen(1.0, 1.0, 1.0);			//1
@@ -50,12 +57,27 @@ public class OrganizacionDonanteTest {
 		voluntario3 = new Voluntario("Voluntario3", "1234", "a@a", "1234", "", vehiculo2);
 		voluntario4 = new Voluntario("Voluntario4", "1234", "a@a", "1234", "", vehiculo3);
 
+		envio1=new Envio(null, null, null, null);
+		envio2=new Envio(null, null, null, null);
+		envio3=new Envio(null, null, null, null);
+		envio4=new Envio(null, null, null, null);
+		
+		voluntario1.asignarTraslado(envio1, null, null, 45.1);
+		
+		//voluntario1.asignarPuntos(zz);
+		
+		voluntario2.asignarTraslado(envio2, null, null, 13.9);
+		voluntario3.asignarTraslado(envio3, null, null, 0);
+		voluntario4.asignarTraslado(envio4, null, null, 0);
+		voluntario1.getTraslados().get(0).cambiarEstadoDeEnvio("cambio de estado voluntario1");
 		orgDonante = new OrganizacionDonante("Walmart", "0000", "5 y 48");
 		
 		orgDonante.altaVoluntario(voluntario1);
 		orgDonante.altaVoluntario(voluntario2);
 		orgDonante.altaVoluntario(voluntario3);
 		orgDonante.altaVoluntario(voluntario4);
+		
+		
 		//le asigno a esperado al voluntario2 quien es el que posee el vehiculo y comparo con el resultado del metodo
 		esperado=new ArrayList<Voluntario>();
 		esperado2=new ArrayList<Voluntario>();
@@ -65,6 +87,7 @@ public class OrganizacionDonanteTest {
 		esperado.add(voluntario4);
 		esperado2.add(voluntario2);
 		esperado2.add(voluntario4);
+		
 	}
 	
 	@Test
@@ -79,8 +102,12 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testGetTrasladosPendientesTotal() {
-	//	assertArrayEquals(,orgDonante.getTrasladosPendientesTotal().toArray());
+		assertEquals(orgDonante.getTrasladosPendientesTotal().size(),3);
 	}
 	
+	@Test
+	public void testAsignarPuntos() {
+		//assertEquals(voluntario1.getPuntuacion(), 46);
+	}
 
 }

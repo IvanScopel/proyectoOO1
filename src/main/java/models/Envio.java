@@ -57,6 +57,10 @@ public class Envio {
 	public List<ResumenEnvio> getResumenEnvio() {
 		return resumenEnvio;
 	}
+
+	public int getId() {
+		return id;
+	}
 	
 	
 	

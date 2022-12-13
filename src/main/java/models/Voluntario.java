@@ -53,7 +53,7 @@ public class Voluntario {
 	
 	//Asigna puntos a una organizacion dado el peso del envio 
 		public void asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
-			puntuacion += (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
+			puntuacion += (int) Math.round(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
 		}
 
 

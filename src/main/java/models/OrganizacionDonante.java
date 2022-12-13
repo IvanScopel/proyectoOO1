@@ -70,7 +70,7 @@ public class OrganizacionDonante {
 	
 	//Asigna puntos a una organizacion dado el peso del envio 
 	public void asignarPuntos(Traslado traslado){
-		puntuacion += (int) Math.ceil(traslado.getDistancia());		
+		puntuacion += (int) Math.round(traslado.getDistancia());		
 	}
 	
 	public List<Voluntario> top10Voluntarios(){
