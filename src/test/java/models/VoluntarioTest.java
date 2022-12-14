@@ -49,7 +49,6 @@ class VoluntarioTest {
 	}
 	@Test
 	public void testGetTrasladosPendientes() {
-		List<Traslado> lista=voluntario.getTrasladosPendientes();
 		assertEquals(voluntario.getTrasladosPendientes().size(),4);
 		
 	}

@@ -27,7 +27,6 @@ class EnvioTest {
 	private Donacion donacion2;
 	
 	private Volumen volumen1;
-	private Volumen volumen2;
 	
 	private ResumenEnvio resumen1;
 	private ResumenEnvio resumen2;

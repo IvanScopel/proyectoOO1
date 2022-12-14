@@ -23,6 +23,12 @@ public class Donacion {
 	public void cambiarEstado(String estado) {
 		this.setEstado(estado);
 	}
+
+	public String getEstado() {
+		return estado;
+	}
+	
+	
 	
 
 }

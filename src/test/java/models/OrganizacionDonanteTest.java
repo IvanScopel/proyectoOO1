@@ -40,8 +40,6 @@ public class OrganizacionDonanteTest {
 	//-------------------------envios-------------------------
 	private Envio envio1;
 	private Envio envio2;
-	private Envio envio3;
-	private Envio envio4;
 	//------------------------voluntarios--------------------
 	private Voluntario voluntario1;
 	private Voluntario voluntario2;

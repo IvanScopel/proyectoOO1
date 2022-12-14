@@ -14,45 +14,26 @@ class BeneficiarioTest {
 	private Producto producto1;
 	private Producto producto2;
 	private Producto producto3;
-	private Producto producto4;
-	private Producto producto5;
 	
 	private List<Producto> lista1;
-	private List<Producto> lista2;
 	
 	private DescripcionDetallada detallada1;
-	private DescripcionDetallada detallada2;
-	private DescripcionGeneral general1;
 	
 	private Date fechaDisponible1;
-	private Date fechaDisponible2;
-	private Date fechaDisponible3;
 	
 	private Donacion donacion1;
-	private Donacion donacion2;
-	private Donacion donacion3;
 	
 	private Volumen volumen1;
-	private Volumen volumen2;
-
+	
 	private ResumenEnvio resumen1;
 	private ResumenEnvio resumen2;
 	private ResumenEnvio resumen3;
-	private ResumenEnvio resumen4;
-	private ResumenEnvio resumen5;
-	private ResumenEnvio resumen6;
 	
 	private List<ResumenEnvio> listaResumen1;
-	private List<ResumenEnvio> listaResumen2;
 	
 	private Beneficiario benefi1;
-	private Beneficiario benefi2;
-	
-	private ResumenEnvio listaResumenEsperada;
-	private List<Producto> listaEsperada;
 	
 	private Envio envio;
-	private Envio envio2;
 	
 	@BeforeEach
 	public void setUp() {
@@ -67,12 +48,9 @@ class BeneficiarioTest {
 		lista1.add(producto2);
 		lista1.add(producto3);
 		//----------------------------------------------donaciones---
-		fechaDisponible1=new Date(2022, 10, 23);
 		detallada1=new DescripcionDetallada(lista1);
 		donacion1=new Donacion("estado", fechaDisponible1,detallada1);
 		//-------
-		//------
-		
 		resumen1=new ResumenEnvio("pan", 15.3);
 		resumen2=new ResumenEnvio("chorizo", 4.0);
 		resumen3=new ResumenEnvio("huevo",6.0);
