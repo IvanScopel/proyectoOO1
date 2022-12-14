@@ -15,36 +15,25 @@ import models.Voluntario;
 
 public class OrganizacionDonanteTest {
 	//------------------------------producto------------------
-	private Producto producto1;
-	private Producto producto2;
-	private Producto producto3;
-	private Producto producto4;
-	private Producto producto5;
+	private Producto producto1,producto2,producto3,producto4,producto5;
 	//---------------------lista de productos----
 	private List<Producto> lista1;
 	private List<Producto> lista2;
 	//------------------------------resumen de envios---------
-	private ResumenEnvio resumen1;
-	private ResumenEnvio resumen2;
-	private ResumenEnvio resumen3;
-	private ResumenEnvio resumen4;
-	private ResumenEnvio resumen5;
-	private ResumenEnvio resumen6;
+	private ResumenEnvio resumen1,resumen2,resumen3,resumen4,resumen5,resumen6;
 	//------------lista de resumen de envio-------------------
 	private List<ResumenEnvio> listaResumen1;
 	//---------------------donacion--------------------------
-	private Donacion donacion1;
-	private Donacion donacion2;
+	private Donacion donacion1,donacion2;
 	//----------------------descripcion de donacion
 	private DescripcionDetallada detallada;
 	//-------------------------envios-------------------------
 	private Envio envio1;
 	private Envio envio2;
 	//------------------------voluntarios--------------------
-	private Voluntario voluntario1;
-	private Voluntario voluntario2;
-	private Voluntario voluntario3;
-	private Voluntario voluntario4;
+	private Voluntario voluntario1,voluntario3,voluntario4,voluntario5,voluntario6;
+	private Voluntario voluntario7,voluntario8,voluntario9,voluntario10,voluntario11;
+	private Voluntario voluntario12,voluntario2;
 	//-----------------------vehiculos-----------------------
 	private Vehiculo vehiculo1;
 	private Vehiculo vehiculo2;
@@ -59,9 +48,16 @@ public class OrganizacionDonanteTest {
 	private Volumen volumenSolicitado;
 	private List<Voluntario> esperado;
 	private List<Voluntario> esperado2;
+	//--------------------traslados---------------
+	Traslado traslado1;
+	Traslado traslado2;
+	Traslado traslado3;
+	Traslado traslado4;
+	Traslado traslado5;
+	//------------------Insignia
+	private Insignia insignia;
 	
-	
-	
+	private TipoInsignia tipoInsignia;
 
 	@BeforeEach
 	public void setup() {
@@ -111,6 +107,12 @@ public class OrganizacionDonanteTest {
 		vehiculo1 = new Vehiculo("Fiat", "Torino", "abc123", volumen1);
 		vehiculo2 = new Vehiculo("ford", "falcon", "sdf548", volumen2);
 		vehiculo3 = new Vehiculo("peugeot", "306", "fkj423", volumen3);
+		//------------------------------traslados----
+		traslado1= new Traslado("comentario",envio1,null, 9.0);
+		traslado2= new Traslado("comentario",envio2,null, 10.0);
+		traslado3= new Traslado("comentario",envio1,null, 11.0);
+		traslado4= new Traslado("comentario",envio2,null, 12.0);
+		traslado5= new Traslado("comentario",envio2,null, 13.0);
 		//--------------------voluntarios------------
 		voluntario1 = new Voluntario("Voluntario1", "1234", "a@a", "1234", "", null);
 		voluntario2 = new Voluntario("Voluntario2", "1234", "a@a", "1234", "", vehiculo1);
@@ -124,18 +126,27 @@ public class OrganizacionDonanteTest {
 		voluntario4 = new Voluntario("Voluntario4", "1234", "a@a", "1234", "", vehiculo3);
 		
 		//-----------		
-		voluntario1.asignarTraslado(envio1, null, null, 45.1);		
-		voluntario2.asignarTraslado(envio2, null, null, 13.9);
-		voluntario3.asignarTraslado(envio1, null, null, 0);
-		voluntario4.asignarTraslado(envio2, null, null, 0);
+		voluntario1.asignarTraslado(traslado1);		
+		voluntario2.asignarTraslado(traslado2);
+		voluntario3.asignarTraslado(traslado3);
+		voluntario4.asignarTraslado(traslado4);
 		voluntario1.getTraslados().get(0).cambiarEstadoDeEnvio("cambio de estado voluntario1");
+		
 		//--------------Organizacion donante--------
 		orgDonante = new OrganizacionDonante("Walmart", "0000", "5 y 48");
 		//--------
 		orgDonante.altaVoluntario(voluntario1);
 		orgDonante.altaVoluntario(voluntario2);
 		orgDonante.altaVoluntario(voluntario3);
-		orgDonante.altaVoluntario(voluntario4);	
+		orgDonante.altaVoluntario(voluntario5);	
+		orgDonante.altaVoluntario(voluntario6);	
+		orgDonante.altaVoluntario(voluntario7);	
+		orgDonante.altaVoluntario(voluntario8);	
+		orgDonante.altaVoluntario(voluntario9);	
+		orgDonante.altaVoluntario(voluntario10);	
+		orgDonante.altaVoluntario(voluntario11);
+		orgDonante.altaVoluntario(voluntario12);	
+		
 		//le asigno a esperado al voluntario2 quien es el que posee el vehiculo y comparo con el resultado del metodo
 		esperado=new ArrayList<Voluntario>();
 		esperado2=new ArrayList<Voluntario>();		
@@ -146,7 +157,8 @@ public class OrganizacionDonanteTest {
 		esperado2.add(voluntario4);
 		voluntario1.asignarPuntos(voluntario1.getTraslados().get(0));
 		//-----------------------------------
-		
+		tipoInsignia=new TipoInsignia("nueva insignia");
+		insignia=new Insignia(tipoInsignia,null/*obtencion*/ ,null/*vencimiento*/ );
 		
 	}
 	
@@ -167,14 +179,22 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testAsignarPuntos() {
-		//el peso es de 123,8 y la distancia es de 45.1
-		//el resultado es 5.583,38
-		assertEquals(voluntario1.getPuntuacion(), 5584);
+		//el peso es de 123.8 y la distancia es de 9
+		//el resultado es 1.114,2 y redondea para arriba a 1115
+		assertEquals(voluntario1.getPuntuacion(), 1115);
 	}
 	
 	@Test
 	public void testTop10Voluntarios() {
 		
+	}
+	
+	@Test
+	public void testAgregarInsignia() {
+		assertNotEquals(orgDonante.getInsignias().size(), 1);
+		this.orgDonante.agregarInsignia(insignia);
+		assertEquals(orgDonante.getInsignias().size(), 1);
+		assertTrue(orgDonante.getInsignias().contains(insignia));
 	}
 
 }

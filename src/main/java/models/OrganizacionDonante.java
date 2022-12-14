@@ -24,6 +24,7 @@ public class OrganizacionDonante {
 		this.contactos = new ArrayList<Contacto>();
 		this.donaciones = new ArrayList<Donacion>();
 		this.voluntarios = new ArrayList<Voluntario>();
+		this.insignias = new ArrayList<Insignia>();
 		this.puntuacion = 0;
 	}
 	
@@ -81,4 +82,9 @@ public class OrganizacionDonante {
 		insignias.add(insignia);
 	}
 
+
+	public List<Insignia> getInsignias() {
+		return insignias;
+	}
+	
 }
