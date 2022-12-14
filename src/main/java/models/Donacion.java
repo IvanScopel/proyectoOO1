@@ -15,7 +15,7 @@ public class Donacion {
 	}
 	
 	//setter
-	public void setEstado(String estado) {
+	private void setEstado(String estado) {
 		this.estado = estado;
 	}
 

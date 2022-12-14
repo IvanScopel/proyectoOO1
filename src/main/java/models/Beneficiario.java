@@ -18,8 +18,8 @@ public class Beneficiario {
 	}
 
 	//crea un envio y lo agrega al listdo de envios de la organizacion
-	public void altaEnvio(List<Producto> productos, Donacion donacion, Volumen volumen, List<ResumenEnvio> resumenEnvio) {
-		envios.add(new Envio(productos, donacion, volumen, resumenEnvio));
+	public void altaEnvio(Envio envio) {
+		envios.add(envio);
 		
 	}
 

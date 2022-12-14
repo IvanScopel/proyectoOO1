@@ -3,15 +3,26 @@ package models;
 public class Producto {
 
 	private String descripcion;
-	//private double kilosXUnidad;
 	private int cantidad;
 	
 	
 	
-	public Producto(String descripcion, /*double kilos,*/ int cantidad) {
+	public Producto(String descripcion, int cantidad) {
 		this.descripcion=descripcion;
-		//this.kilosXUnidad=kilos;
 		this.cantidad = cantidad;
 	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public int getCantidad() {
+		return cantidad;
+	}
+	
+	
 	
 }

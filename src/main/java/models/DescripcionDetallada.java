@@ -14,5 +14,11 @@ public class DescripcionDetallada implements Descripcion {
 	public void altaAlimento(Producto producto) {
 		productos.add(producto);
 	}
+
+	//test
+	public List<Producto> getProductos() {
+		return productos;
+	}
+
 	
 }

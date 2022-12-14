@@ -17,6 +17,30 @@ public class Contacto {
 		this.nombre = nombre;
 		this.apellido= apellido;
 	}
+
+	
+	
+	
+	// getters para testing
+	public String getDni() {
+		return dni;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
 	
 	
 	

@@ -10,6 +10,18 @@ public class DescripcionGeneral implements Descripcion {
 		this.volumen=volumen;
 		this.caracteristicas=caracteristicas;
 	}
+
+	
+	
+	
+	//para test
+	public String getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public Volumen getVolumen() {
+		return volumen;
+	}
 	
 	
 
