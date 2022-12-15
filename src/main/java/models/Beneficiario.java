@@ -6,7 +6,7 @@ import java.util.List;
 public class Beneficiario {
 	
 	private String nombre;
-	private String direccion;
+	private String direccion; //asumimos que para esta instancia, no era necesario declararlo por coordenadas
 	private int cantPersonas;
 	private List<Envio> envios;
 	

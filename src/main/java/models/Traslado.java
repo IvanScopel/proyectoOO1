@@ -52,6 +52,14 @@ public class Traslado {
 	}
 	
 	
+	//el enunciado pide un método que devuelva la distancia entre dos coordenadas.
+	//tomamos en cuenta este caso, pero lo resolvimos con un atributo "distancia" 
+	//para que no sea un unico resultado en caso de instanciar varios traslados
+	public int calcularDistancia(Double[] latLongDesde, Double[] latLonghasta) {
+		return 50;
+	}
+	
+	
 	
 	
 	

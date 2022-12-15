@@ -16,7 +16,7 @@ public class OrganizacionDonante {
 	
 	private String razon_social;
 	private String cuil;
-	private String direccion;
+	private String direccion; //asumimos que para esta instancia, no era necesario declararlo por coordenadas
 	private List<Contacto> contactos;
 	private List<Voluntario> voluntarios;
 	private List<Donacion> donaciones;
