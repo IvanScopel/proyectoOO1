@@ -71,9 +71,7 @@ public class Voluntario {
 		return puntuacion;
 	}
 	
-	public List<Traslado> getTraslados() {
-		return traslados;
-	}
+	
 	
 	// -- fin getters -- //
 	
@@ -93,7 +91,7 @@ public class Voluntario {
 	public void asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
 			puntuacion += (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
 	}
-<<<<<<< HEAD
+
 
 
 	public List<Traslado> getTraslados() {
@@ -104,9 +102,7 @@ public class Voluntario {
 	public void setPuntuacion(int puntuacion) {
 		this.puntuacion = puntuacion;
 	}
-=======
->>>>>>> 762b58cd02a2058369d903fe5f079bae46a18b74
-		
+
 		
 	
 }

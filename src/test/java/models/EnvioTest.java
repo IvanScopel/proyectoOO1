@@ -17,8 +17,6 @@ class EnvioTest {
 	private Producto producto1;
 	private Producto producto2;
 	private Producto producto3;
-	private Producto producto4;
-	private Producto producto5;
 	
 	private List<Producto> lista1;
 	private List<Producto> lista2;
@@ -33,7 +31,6 @@ class EnvioTest {
 	private ResumenEnvio resumen3;
 	private ResumenEnvio resumen4;
 	private ResumenEnvio resumen5;
-	private ResumenEnvio resumen6;
 	
 	private List<ResumenEnvio> listaResumen1;
 	private List<ResumenEnvio> listaResumen2;
@@ -90,13 +87,13 @@ class EnvioTest {
 		//lista productos/productos--/donacion/volumen/lista resumenEnvio
 		envio1=new Envio(lista1, donacion1, volumen1, listaResumen1);
 		envio2=new Envio(lista2, donacion2, volumen1, listaResumen2);
-		envio1.cambiarEstado("estado nuevo");
-		envio2.cambiarEstado("estado nuevo");
+	
+;
 	}
 	@Test
 	public void testCambiarEstado(){
 		assertEquals(envio1.getEstado(),"estado nuevo");
-		assertNotNull(envio1.getDonacion());
+	
 		assertEquals(envio2.getEstado(),"estado nuevo");
 		assertNull(envio2.getDonacion());
 	}
