@@ -18,14 +18,9 @@ class DonacionTest {
 	}
 	
 	@Test
-	public void testSetEstado() {
+	public void testCambiarEstado() {
 		donacion.cambiarEstado("mi estado nuevo");
 		assertEquals(donacion.getEstado(), "mi estado nuevo");
-	}
-	
-	@Test
-	public void testCambiarEstado() {
-		
 	}
 
 }

@@ -13,4 +13,20 @@ public class Insignia {
 		this.fechaOtorgada = fechaOtorgada;
 		this.fechaVencimiento = fechaVencimiento;
 	}
+
+	
+	//para testing
+	public TipoInsignia getTipoInsignia() {
+		return tipoInsignia;
+	}
+
+	public LocalDate getFechaOtorgada() {
+		return fechaOtorgada;
+	}
+
+	public LocalDate getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+	
+	
 }

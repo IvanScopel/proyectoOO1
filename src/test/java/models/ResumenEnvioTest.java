@@ -9,13 +9,13 @@ class ResumenEnvioTest {
  
 	private ResumenEnvio resumenEnvio;
 	
-	@BeforeEach
-	public void setUp() {
-		resumenEnvio= new ResumenEnvio("papeles", 11.0);
-	}
+
+
 	@Test
-	public void testGetKilos() {
-		assertEquals(resumenEnvio.getKilos(), 11.0);
+	public void testConstructor() {
+		this.resumenEnvio = new ResumenEnvio("unaDescripcion", 20.0);
+		assertEquals(this.resumenEnvio.getDescripcion(), "unaDescripcion");
+		assertEquals(this.resumenEnvio.getKilos(), 20.0);
 	}
 
 }

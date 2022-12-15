@@ -97,6 +97,7 @@ class VoluntarioTest {
 	
 	@Test
 	public void testAsignarTraslado() {
+		assertTrue(!voluntario.getTraslados().contains(traslado5));
 		voluntario.asignarTraslado(traslado5);
 		assertTrue(voluntario.getTraslados().contains(traslado5));
 	}

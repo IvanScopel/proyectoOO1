@@ -92,5 +92,12 @@ class EnvioTest {
 		assertEquals(envio1.obtenerElPesoDelEnvio(),25.3);
 		
 	}
+	
+	@Test
+	public void testId() {
+		assertEquals(this.envio1.getId(), 1);
+		this.envio2 = new Envio(lista1, donacion1, volumen1, listaResumen1);
+		assertEquals(this.envio2.getId(), 2);
+	}
 
 }

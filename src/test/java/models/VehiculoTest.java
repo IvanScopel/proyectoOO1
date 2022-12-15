@@ -10,7 +10,7 @@ class VehiculoTest {
 	private Volumen volumen;
 	
 	@Test
-	public void testVehiculo() {
+	public void testConstructor() {
 		this.volumen = new Volumen(1.0, 2.0, 3.0);
 		this.vehiculo = new Vehiculo("Volkswagen", "Gol", "abc123", volumen);
 		assertEquals(this.vehiculo.getMarca(), "Volkswagen");

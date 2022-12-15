@@ -35,16 +35,18 @@ public class Envio {
 		return estado;
 	}
 	
-	//para test---------------------------------------
 	public Donacion getDonacion() {
 		return donacion;
 	}
+	
 	public List<Producto> getProductos() {
 		return productos;
 	}
+	
 	public Volumen getVolumen() {
 		return volumen;
 	}
+	
 	public List<ResumenEnvio> getResumenEnvio() {
 		return resumenEnvio;
 	}
@@ -62,9 +64,9 @@ public class Envio {
 	}
 	
 	//Este metodo obtiene el peso del envio sumando el resumen de envio y le reduce los decimales
-		public double obtenerElPesoDelEnvio() {
-			return Math.round(resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum() * 100.0) / 100.0;
-		}
+	public double obtenerElPesoDelEnvio() {
+		return Math.round(resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum() * 100.0) / 100.0;
+	}
 	
 	
 }

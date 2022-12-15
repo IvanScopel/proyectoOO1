@@ -12,8 +12,13 @@ public class ResumenEnvio {
 	}
 
 
+	//para testing
 	public Double getKilos() {
 		return kilos;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
 	}
 	
 	

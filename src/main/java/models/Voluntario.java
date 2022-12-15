@@ -70,11 +70,7 @@ public class Voluntario {
 	public Integer getPuntuacion() {
 		return puntuacion;
 	}
-	
-	
-	
-	// -- fin getters -- //
-	
+		
 	
 	//asigna un envio y su respectivo comentario a el voluntario
 	public void asignarTraslado(Traslado nuevoTraslado) {

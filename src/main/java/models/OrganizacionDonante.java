@@ -35,6 +35,40 @@ public class OrganizacionDonante {
 	}
 	
 	
+	//getters para test
+	public String getRazon_social() {
+		return razon_social;
+	}
+
+	public String getCuil() {
+		return cuil;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public List<Contacto> getContactos() {
+		return contactos;
+	}
+
+	public List<Voluntario> getVoluntarios() {
+		return voluntarios;
+	}
+
+	public List<Donacion> getDonaciones() {
+		return donaciones;
+	}
+
+	public Integer getPuntuacion() {
+		return puntuacion;
+	}
+	
+	public List<Insignia> getInsignias() {
+		return insignias;
+	}
+	
+	
 	//agrega un contacto a el listado de contacto de la organizacion
 	public void altaContacto(Contacto contacto) {
 		contactos.add(contacto);
@@ -88,9 +122,5 @@ public class OrganizacionDonante {
 		insignias.add(insignia);
 	}
 
-
-	public List<Insignia> getInsignias() {
-		return insignias;
-	}
 	
 }

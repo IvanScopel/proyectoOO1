@@ -14,10 +14,10 @@ public class Producto {
 
 
 
+	//para testing
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 
 	public int getCantidad() {
 		return cantidad;

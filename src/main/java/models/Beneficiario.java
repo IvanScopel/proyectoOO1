@@ -17,14 +17,8 @@ public class Beneficiario {
 		envios = new ArrayList<Envio>();
 	}
 
-	//crea un envio y lo agrega al listdo de envios de la organizacion
-	public void altaEnvio(Envio envio) {
-		envios.add(envio);
-		
-	}
-
-	//para test
-	
+	 
+	//getters para testing
 	public List<Envio> getEnvios() {
 		return envios;
 	}
@@ -41,5 +35,10 @@ public class Beneficiario {
 		return cantPersonas;
 	}
 	
+	//crea un envio y lo agrega al listdo de envios de la organizacion
+	public void altaEnvio(Envio envio) {
+		envios.add(envio);
+		
+	}
 	
 }

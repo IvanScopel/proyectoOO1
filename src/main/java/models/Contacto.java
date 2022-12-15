@@ -18,9 +18,6 @@ public class Contacto {
 		this.apellido= apellido;
 	}
 
-	
-	
-	
 	// getters para testing
 	public String getDni() {
 		return dni;

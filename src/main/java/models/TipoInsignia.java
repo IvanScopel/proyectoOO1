@@ -7,4 +7,11 @@ public class TipoInsignia {
 	public TipoInsignia(String nombre) {
 		this.nombre = nombre;
 	}
+
+	//para testing
+	public String getNombre() {
+		return nombre;
+	}
+	
+	
 }

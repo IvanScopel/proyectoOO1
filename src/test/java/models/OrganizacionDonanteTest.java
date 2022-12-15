@@ -16,44 +16,46 @@ import models.Voluntario;
 public class OrganizacionDonanteTest {
 	//------------------------------producto------------------
 	private Producto producto1,producto2,producto3,producto4,producto5;
+	
 	//---------------------lista de productos----
-	private List<Producto> lista1;
-	private List<Producto> lista2;
+	private List<Producto> lista1, lista2;
+	
 	//------------------------------resumen de envios---------
 	private ResumenEnvio resumen1,resumen2,resumen3,resumen4,resumen5,resumen6;
+	
 	//------------lista de resumen de envio-------------------
 	private List<ResumenEnvio> listaResumen1;
+	
 	//---------------------donacion--------------------------
 	private Donacion donacion1,donacion2;
+	
 	//----------------------descripcion de donacion
 	private DescripcionDetallada detallada;
+	
 	//-------------------------envios-------------------------
-	private Envio envio1;
-	private Envio envio2;
+	private Envio envio1, envio2, envioConstructor;
+	
 	//------------------------voluntarios--------------------
 	private Voluntario voluntario1,voluntario3,voluntario4,voluntario5,voluntario6;
 	private Voluntario voluntario7,voluntario8,voluntario9,voluntario10,voluntario11;
 	private Voluntario voluntario12,voluntario2;
+	
 	//-----------------------vehiculos-----------------------
-	private Vehiculo vehiculo1;
-	private Vehiculo vehiculo2;
-	private Vehiculo vehiculo3;
+	private Vehiculo vehiculo1, vehiculo2, vehiculo3;
+
 	//----------------------volumen--------------------------
-	private Volumen volumen1;
-	private Volumen volumen2;
-	private Volumen volumen3;
+	private Volumen volumen1, volumen2, volumen3;
+	
 	//-------------------organizacion donante--------------
 	private OrganizacionDonante orgDonante;
+	
 	//--------------------Generado para comparar en test
 	private Volumen volumenSolicitado;
-	private List<Voluntario> esperado;
-	private List<Voluntario> esperado2;
+	private List<Voluntario> esperado, esperado2;
+
 	//--------------------traslados---------------
-	Traslado traslado1;
-	Traslado traslado2;
-	Traslado traslado3;
-	Traslado traslado4;
-	Traslado traslado5;
+	Traslado traslado1, traslado2, traslado3, traslado4, traslado5;
+	
 	//------------------Insignia
 	private Insignia insignia;
 	
@@ -179,6 +181,7 @@ public class OrganizacionDonanteTest {
 		tipoInsignia=new TipoInsignia("nueva insignia");
 		insignia=new Insignia(tipoInsignia,null/*obtencion*/ ,null/*vencimiento*/ );
 		
+		//lista esperada para el método top10Voluntarios
 		listaEsperada.add(voluntario1);
 		listaEsperada.add(voluntario2);
 		listaEsperada.add(voluntario3);
@@ -189,6 +192,15 @@ public class OrganizacionDonanteTest {
 		listaEsperada.add(voluntario8);
 		listaEsperada.add(voluntario9);
 		listaEsperada.add(voluntario10);
+	}
+	
+	@Test
+	public void testConstructor() {
+		this.envioConstructor = new Envio(lista1, donacion1, volumen1, listaResumen1);
+		assertEquals(this.envioConstructor.getProductos(), lista1);
+		assertEquals(this.envioConstructor.getDonacion(), donacion1);
+		assertEquals(this.envioConstructor.getVolumen(), volumen1);
+		assertEquals(this.envioConstructor.getResumenEnvio(), listaResumen1);
 	}
 	
 	@Test
@@ -219,11 +231,15 @@ public class OrganizacionDonanteTest {
 	@Test
 	public void testTop10Voluntarios() {
 		assertEquals(orgDonante.top10Voluntarios(), this.listaEsperada);
+		this.listaEsperada.remove(0);
+		this.listaEsperada.add(voluntario11);
+		assertNotEquals(orgDonante.top10Voluntarios(), this.listaEsperada);
+		
 	}
 	
 	@Test
 	public void testAgregarInsignia() {
-		assertNotEquals(orgDonante.getInsignias().size(), 1);
+		assertEquals(orgDonante.getInsignias().size(), 0);
 		this.orgDonante.agregarInsignia(insignia);
 		assertEquals(orgDonante.getInsignias().size(), 1);
 		assertTrue(orgDonante.getInsignias().contains(insignia));

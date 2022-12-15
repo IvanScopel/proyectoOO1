@@ -9,17 +9,12 @@ class ProductoTest {
 
 	Producto producto;
 	
-	@BeforeEach
-	public void setup() {
-		producto=new Producto("pera", 5);
-	}
-	@Test
-	public void testGetDescripcion() {
-		assertEquals(producto.getDescripcion(), "pera");
-	}
-	@Test
-	public void testGetCantidad() {
-		assertEquals(producto.getCantidad(), 5);
-	}
 
+	
+	@Test
+	public void testConstructor() {
+		this.producto = new Producto("descripcionProd", 5);
+		assertEquals(this.producto.getDescripcion(), "descripcionProd");
+		assertEquals(this.producto.getCantidad(), 5);
+	}
 }

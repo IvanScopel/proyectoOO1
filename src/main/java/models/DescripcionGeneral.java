@@ -11,10 +11,7 @@ public class DescripcionGeneral implements Descripcion {
 		this.caracteristicas=caracteristicas;
 	}
 
-	
-	
-	
-	//para test
+	//getters para testing
 	public String getCaracteristicas() {
 		return caracteristicas;
 	}
