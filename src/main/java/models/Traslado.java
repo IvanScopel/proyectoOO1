@@ -56,7 +56,7 @@ public class Traslado {
 	//tomamos en cuenta este caso, pero lo resolvimos con un atributo "distancia" 
 	//para que no sea un unico resultado en caso de instanciar varios traslados
 	public int calcularDistancia(Double[] latLongDesde, Double[] latLonghasta) {
-		return 50;
+		return  (int) Math.random()*15;
 	}
 	
 	
