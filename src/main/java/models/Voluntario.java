@@ -25,18 +25,58 @@ public class Voluntario {
 		this.direccion_estable = direccion_estable;
 		this.vehiculo = vehiculo;
 		this.traslados = new ArrayList<Traslado>();
+		this.insignias = new ArrayList<Insignia>();
 		this.puntuacion = 0;
 	}
 		
 	
+	//-- getters -- //
 	//retorna si posee vehiculo en caso contrario retorna null
 	public Vehiculo getVehiculo(){
 		return vehiculo;
 	}
 	
+	
+	public String getDni() {
+		return dni;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public String getDireccion_estable() {
+		return direccion_estable;
+	}
+
+
+	public List<Insignia> getInsignias() {
+		return insignias;
+	}
+
+
 	public Integer getPuntuacion() {
 		return puntuacion;
 	}
+	
+	public List<Traslado> getTraslados() {
+		return traslados;
+	}
+	
+	// -- fin getters -- //
+	
 	
 	//asigna un envio y su respectivo comentario a el voluntario
 	public void asignarTraslado(Traslado nuevoTraslado) {
@@ -44,7 +84,6 @@ public class Voluntario {
 		nuevoTraslado.cambiarEstadoDeEnvio("en traslado");
 	}
 	
-	//------------------------------
 	public List<Traslado> getTrasladosPendientes(){
 		return traslados.stream().filter(each -> each.getEnvio().getEstado() == "en traslado").collect(Collectors.toList());
 		 
@@ -53,11 +92,6 @@ public class Voluntario {
 	//Asigna puntos a una organizacion dado el peso del envio 
 	public void asignarPuntos(Traslado traslado){//traslado y ver casteo para redondeo/ agregar  en voluntario /agregar) {
 			puntuacion += (int) Math.ceil(traslado.getDistancia()*traslado.getEnvio().obtenerElPesoDelEnvio());		
-	}
-
-
-	public List<Traslado> getTraslados() {
-			return traslados;
 	}
 		
 		

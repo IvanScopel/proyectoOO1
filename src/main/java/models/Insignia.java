@@ -1,14 +1,14 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Insignia {
 
 	private TipoInsignia tipoInsignia;
-	private Date fechaOtorgada;
-	private Date fechaVencimiento;
+	private LocalDate fechaOtorgada;
+	private LocalDate fechaVencimiento;
 	
-	public Insignia(TipoInsignia tipoInsignia, Date fechaOtorgada, Date fechaVencimiento) {
+	public Insignia(TipoInsignia tipoInsignia, LocalDate fechaOtorgada, LocalDate fechaVencimiento) {
 		this.tipoInsignia = tipoInsignia;
 		this.fechaOtorgada = fechaOtorgada;
 		this.fechaVencimiento = fechaVencimiento;

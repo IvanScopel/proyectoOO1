@@ -13,6 +13,19 @@ public class Volumen {
 	
 	
 	
+	// para test
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public double getZ() {
+		return z;
+	}
+
 	//retorna el volumen de un prisma rectangular
 	public double getVolumen() {
 		return x*y*z;

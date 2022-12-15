@@ -28,11 +28,10 @@ class DescripcionDetalladaTest {
 	
 	@Test
 	public void testConstructor() {
-	
-
 		assertEquals(this.descripcionDetallada.getProductos().size(),2);
 		assertTrue(this.descripcionDetallada.getProductos().contains(this.tomate));
 	}
 
 
+	
 }

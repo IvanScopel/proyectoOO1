@@ -1,14 +1,14 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Donacion {
 	
 	private String estado;
-	private Date fechaDisponible;
+	private LocalDate fechaDisponible;
 	private Descripcion descripcion;
 	//hace falta ponerle estado?
-	public Donacion(String estado, Date fechaDisponible, Descripcion descripcion) {
+	public Donacion(String estado, LocalDate fechaDisponible, Descripcion descripcion) {
 		this.estado=estado;
 		this.fechaDisponible=fechaDisponible;
 		this.descripcion=descripcion;

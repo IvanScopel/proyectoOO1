@@ -24,8 +24,21 @@ public class Beneficiario {
 	}
 
 	//para test
+	
 	public List<Envio> getEnvios() {
 		return envios;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public int getCantPersonas() {
+		return cantPersonas;
 	}
 	
 	
