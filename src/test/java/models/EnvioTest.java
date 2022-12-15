@@ -19,10 +19,8 @@ class EnvioTest {
 	private Producto producto3;
 	
 	private List<Producto> lista1;
-	private List<Producto> lista2;
 	
 	private Donacion donacion1;
-	private Donacion donacion2;
 	
 	private Volumen volumen1;
 	
@@ -33,7 +31,6 @@ class EnvioTest {
 	private ResumenEnvio resumen5;
 	
 	private List<ResumenEnvio> listaResumen1;
-	private List<ResumenEnvio> listaResumen2;
 	
 	private LocalDate fechaDisponible1;
 	private LocalDate fechaDisponible2;
@@ -60,12 +57,7 @@ class EnvioTest {
 		fechaDisponible1= LocalDate.of(2022, 10, 23);
 		detallada1=new DescripcionDetallada(lista1);
 		donacion1=new Donacion("estado", fechaDisponible1,detallada1);
-		//-------
-		fechaDisponible2= LocalDate.of(2022, 9, 23);
-		detallada2=new DescripcionDetallada(lista2);
-		donacion1=new Donacion("estado", fechaDisponible2,detallada2);
-		//------
-		fechaDisponible3= LocalDate.of(2022, 10, 23);
+		
 		general1=new DescripcionGeneral(volumen1,"caracteristicas");
 		donacion1=new Donacion("estado", fechaDisponible3,general1);
 		//--------------------------------------------resumen--------
@@ -79,29 +71,25 @@ class EnvioTest {
 		listaResumen1.add(resumen2);
 		//-------------------
 		listaResumen1.add(resumen3);
-		listaResumen2.add(resumen4);
-		listaResumen2.add(resumen5);
 		//-------------------
 		volumen1=new Volumen(2.0, 3.0, 9.0);
 		
 		//lista productos/productos--/donacion/volumen/lista resumenEnvio
 		envio1=new Envio(lista1, donacion1, volumen1, listaResumen1);
-		envio2=new Envio(lista2, donacion2, volumen1, listaResumen2);
 	
-;
+
 	}
+
 	@Test
 	public void testCambiarEstado(){
-		assertEquals(envio1.getEstado(),"estado nuevo");
-	
-		assertEquals(envio2.getEstado(),"estado nuevo");
-		assertNull(envio2.getDonacion());
+		assertEquals(envio1.getEstado(),"pendiente de retiro");
+		envio1.cambiarEstado("otroEstado");
+		assertEquals(envio1.getEstado(), "otroEstado");
 	}
 	
 	@Test
 	public void testObtenerElPesoDelEnvio(){
-		assertNotEquals(envio1.obtenerElPesoDelEnvio(),15.0);
-		assertEquals(envio1.obtenerElPesoDelEnvio(),42.9);
+		assertEquals(envio1.obtenerElPesoDelEnvio(),25.3);
 		
 	}
 
