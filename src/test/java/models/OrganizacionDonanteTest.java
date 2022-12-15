@@ -58,6 +58,9 @@ public class OrganizacionDonanteTest {
 	private Insignia insignia;
 	
 	private TipoInsignia tipoInsignia;
+	
+	private List<Voluntario> listaEsperada = new ArrayList<Voluntario>();
+
 
 	@BeforeEach
 	public void setup() {
@@ -176,7 +179,16 @@ public class OrganizacionDonanteTest {
 		tipoInsignia=new TipoInsignia("nueva insignia");
 		insignia=new Insignia(tipoInsignia,null/*obtencion*/ ,null/*vencimiento*/ );
 		
-		
+		listaEsperada.add(voluntario1);
+		listaEsperada.add(voluntario2);
+		listaEsperada.add(voluntario3);
+		listaEsperada.add(voluntario4);
+		listaEsperada.add(voluntario5);
+		listaEsperada.add(voluntario6);
+		listaEsperada.add(voluntario7);
+		listaEsperada.add(voluntario8);
+		listaEsperada.add(voluntario9);
+		listaEsperada.add(voluntario10);
 	}
 	
 	@Test
@@ -206,9 +218,7 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testTop10Voluntarios() {
-		assertEquals(orgDonante.top10Voluntarios().get(0),voluntario1/*top 1*/);
-		assertEquals(orgDonante.top10Voluntarios().get(4),voluntario5/*top 5*/);
-		assertEquals(orgDonante.top10Voluntarios().get(9),voluntario10/*top 10*/);
+		assertEquals(orgDonante.top10Voluntarios(), this.listaEsperada);
 	}
 	
 	@Test
