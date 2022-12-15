@@ -59,6 +59,11 @@ public class Voluntario {
 	public List<Traslado> getTraslados() {
 			return traslados;
 	}
+
+
+	public void setPuntuacion(int puntuacion) {
+		this.puntuacion = puntuacion;
+	}
 		
 		
 	

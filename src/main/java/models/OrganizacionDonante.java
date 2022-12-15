@@ -1,6 +1,8 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -75,7 +77,7 @@ public class OrganizacionDonante {
 	}
 	
 	public List<Voluntario> top10Voluntarios(){
-		return voluntarios.stream().sorted((v1, v2) -> v1.getPuntuacion().compareTo(v2.getPuntuacion())).limit(10).collect(Collectors.toList());
+		return voluntarios.stream().sorted(Comparator.comparingInt(Voluntario::getPuntuacion).reversed()).limit(10).collect(Collectors.toList());
 	}
 	
 	public void agregarInsignia(Insignia insignia) {

@@ -110,7 +110,7 @@ public class OrganizacionDonanteTest {
 		//------------------------------traslados----
 		traslado1= new Traslado("comentario",envio1,null, 9.0);
 		traslado2= new Traslado("comentario",envio2,null, 10.0);
-		traslado3= new Traslado("comentario",envio1,null, 11.0);
+		traslado3= new Traslado("comentario",envio2,null, 11.0);
 		traslado4= new Traslado("comentario",envio2,null, 12.0);
 		traslado5= new Traslado("comentario",envio2,null, 13.0);
 		//--------------------voluntarios------------
@@ -118,12 +118,14 @@ public class OrganizacionDonanteTest {
 		voluntario2 = new Voluntario("Voluntario2", "1234", "a@a", "1234", "", vehiculo1);
 		voluntario3 = new Voluntario("Voluntario3", "1234", "a@a", "1234", "", vehiculo2);
 		voluntario4 = new Voluntario("Voluntario4", "1234", "a@a", "1234", "", vehiculo3);
-		voluntario1 = new Voluntario("Voluntario1", "1234", "a@a", "1234", "", null);
-		voluntario2 = new Voluntario("Voluntario2", "1234", "a@a", "1234", "", vehiculo1);
-		voluntario3 = new Voluntario("Voluntario3", "1234", "a@a", "1234", "", vehiculo2);
-		voluntario4 = new Voluntario("Voluntario4", "1234", "a@a", "1234", "", vehiculo3);
-		voluntario3 = new Voluntario("Voluntario3", "1234", "a@a", "1234", "", vehiculo2);
-		voluntario4 = new Voluntario("Voluntario4", "1234", "a@a", "1234", "", vehiculo3);
+		voluntario5 = new Voluntario("Voluntario5", "1234", "a@a", "1234", "", null);
+		voluntario6 = new Voluntario("Voluntario6", "1234", "a@a", "1234", "", null);
+		voluntario7 = new Voluntario("Voluntario7", "1234", "a@a", "1234", "", null);
+		voluntario8 = new Voluntario("Voluntario8", "1234", "a@a", "1234", "", null);
+		voluntario9 = new Voluntario("Voluntario9", "1234", "a@a", "1234", "", null);
+		voluntario10 = new Voluntario("Voluntario10", "1234", "a@a", "1234", "", null);
+		voluntario11 = new Voluntario("Voluntario11", "1234", "a@a", "1234", "", null);
+		voluntario12 = new Voluntario("Voluntario12", "1234", "a@a", "1234", "", null);
 		
 		//-----------		
 		voluntario1.asignarTraslado(traslado1);		
@@ -131,13 +133,27 @@ public class OrganizacionDonanteTest {
 		voluntario3.asignarTraslado(traslado3);
 		voluntario4.asignarTraslado(traslado4);
 		voluntario1.getTraslados().get(0).cambiarEstadoDeEnvio("cambio de estado voluntario1");
-		
+		//-----------------------------------
+
+		voluntario2.setPuntuacion(9);	//top2
+		voluntario3.setPuntuacion(8);
+		voluntario4.setPuntuacion(7);
+		voluntario5.setPuntuacion(6);	//top5
+		voluntario6.setPuntuacion(5);
+		voluntario7.setPuntuacion(4);
+		voluntario8.setPuntuacion(3);
+		voluntario9.setPuntuacion(2);
+		voluntario10.setPuntuacion(1);	//top10
+		voluntario11.setPuntuacion(0);
+		voluntario12.setPuntuacion(0);
+				
 		//--------------Organizacion donante--------
 		orgDonante = new OrganizacionDonante("Walmart", "0000", "5 y 48");
 		//--------
-		orgDonante.altaVoluntario(voluntario1);
+		orgDonante.altaVoluntario(voluntario1);	//top1
 		orgDonante.altaVoluntario(voluntario2);
 		orgDonante.altaVoluntario(voluntario3);
+		orgDonante.altaVoluntario(voluntario4);
 		orgDonante.altaVoluntario(voluntario5);	
 		orgDonante.altaVoluntario(voluntario6);	
 		orgDonante.altaVoluntario(voluntario7);	
@@ -160,21 +176,25 @@ public class OrganizacionDonanteTest {
 		tipoInsignia=new TipoInsignia("nueva insignia");
 		insignia=new Insignia(tipoInsignia,null/*obtencion*/ ,null/*vencimiento*/ );
 		
+		
 	}
 	
 	@Test
 	public void testGetVoluntariosConVehiculo() {
-		assertArrayEquals(esperado.toArray(), orgDonante.getVoluntariosConVehiculo().toArray());
+		assertTrue(esperado.containsAll(orgDonante.getVoluntariosConVehiculo()));
 	}
 	
 	@Test
 	public void testGetVoluntariosParaTraslado() {
-		assertArrayEquals(esperado2.toArray(), orgDonante.getVoluntariosParaTraslado(volumenSolicitado).toArray());
+		
+		assertTrue(esperado2.containsAll(orgDonante.getVoluntariosParaTraslado(volumenSolicitado)));
+		
 	}
 	
 	@Test
 	public void testGetTrasladosPendientesTotal() {
-		assertEquals(orgDonante.getTrasladosPendientesTotal().size(),2);
+		List<Traslado> aux=orgDonante.getTrasladosPendientesTotal();
+		assertEquals(orgDonante.getTrasladosPendientesTotal().size(),3);
 	}
 	
 	@Test
@@ -186,7 +206,9 @@ public class OrganizacionDonanteTest {
 	
 	@Test
 	public void testTop10Voluntarios() {
-		
+		assertEquals(orgDonante.top10Voluntarios().get(0),voluntario1/*top 1*/);
+		assertEquals(orgDonante.top10Voluntarios().get(4),voluntario5/*top 5*/);
+		assertEquals(orgDonante.top10Voluntarios().get(9),voluntario10/*top 10*/);
 	}
 	
 	@Test
