@@ -81,7 +81,7 @@ class BeneficiarioTest {
 	
 	@Test
 	public void testAltaEnvio(){
-
+		assertEquals(this.beneficiario.getEnvios().size(), 0);
 		this.envio = new Envio(lista1, donacion1, volumen1, listaResumen1);
 		beneficiario.altaEnvio(envio);
 		assertEquals(this.beneficiario.getEnvios().size(), 1);

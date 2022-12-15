@@ -9,8 +9,8 @@ import org.junit.jupiter.api.Test;
 
 class DonacionTest {
 	
-	Donacion donacion;
-	LocalDate fecha;
+	private Donacion donacion;
+	private LocalDate fecha;
 	
 	@BeforeEach
 	public void setup() {
@@ -19,8 +19,9 @@ class DonacionTest {
 	
 	@Test
 	public void testCambiarEstado() {
-		donacion.cambiarEstado("mi estado nuevo");
-		assertEquals(donacion.getEstado(), "mi estado nuevo");
+		assertNotEquals(this.donacion.getEstado(), "estado nuevo");
+		donacion.cambiarEstado("estado nuevo");
+		assertEquals(donacion.getEstado(), "estado nuevo");
 	}
 
 }
