@@ -2,6 +2,7 @@ package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +20,7 @@ class BeneficiarioTest {
 	
 	private DescripcionDetallada detallada1;
 	
-	private Date fechaDisponible1;
+	private LocalDate fechaDisponible1;
 	
 	private Donacion donacion1;
 	
@@ -31,7 +32,7 @@ class BeneficiarioTest {
 	
 	private List<ResumenEnvio> listaResumen1;
 	
-	private Beneficiario benefi1;
+	private Beneficiario beneficiario;
 	
 	private Envio envio;
 	
@@ -41,9 +42,9 @@ class BeneficiarioTest {
 		producto1=new Producto("pan", 48);
 		producto2=new Producto("chorizo", 64);
 		producto3=new Producto("huevo", 135);
+		
 		//----------------------------------------------
 		lista1=new ArrayList<Producto>();
-		
 		lista1.add(producto1);
 		lista1.add(producto2);
 		lista1.add(producto3);
@@ -61,21 +62,30 @@ class BeneficiarioTest {
 		listaResumen1.add(resumen2);
 		listaResumen1.add(resumen3);
 		
-	    //--------------------------------crear beneficiarios-------
-		benefi1=new Beneficiario("cara sucia", "la plata 1900", 6);
+	    //--------------------------------crear beneficiario-------
+		beneficiario=new Beneficiario("cara sucia", "la plata 1900", 6);
 		
 		volumen1=new Volumen(1.0, 4.0, 9.50);
 		
-		//crea un envio y lo agrega a la lista de envios----------
+		
+	}
+	
+	
+	@Test
+	public void testConstructor() {
+		assertEquals(this.beneficiario.getNombre(), "cara sucia");
+		assertEquals(this.beneficiario.getDireccion(), "la plata 1900");
+		assertEquals(this.beneficiario.getCantPersonas(), 6);
+		assertEquals(this.beneficiario.getEnvios().size(),0);
 	}
 	
 	@Test
 	public void testAltaEnvio(){
 
 		this.envio = new Envio(lista1, donacion1, volumen1, listaResumen1);
-		benefi1.altaEnvio(envio);
-		assertEquals(this.benefi1.getEnvios().size(), 1);
-		assertTrue(this.benefi1.getEnvios().contains(this.envio));
+		beneficiario.altaEnvio(envio);
+		assertEquals(this.beneficiario.getEnvios().size(), 1);
+		assertTrue(this.beneficiario.getEnvios().contains(this.envio));
 		
 		
 	}

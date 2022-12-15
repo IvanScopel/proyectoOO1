@@ -25,13 +25,7 @@ public class Envio {
 		
 	};
 	
-	//cambia de estado al envio y si tiene donacion tambien
-	public void cambiarEstado(String estado) {
-		 this.setEstado(estado);
-		if (this.donacion != null) {
-			donacion.cambiarEstado(estado);
-		}
-	}
+	
 	//setter
 	private void setEstado(String estado) {
 		this.estado = estado;
@@ -39,10 +33,6 @@ public class Envio {
 	//getter
 	public String getEstado() {
 		return estado;
-	}
-	//Este metodo obtiene el peso del envio sumando el resumen de envio y le reduce los decimales
-	public double obtenerElPesoDelEnvio() {
-		return Math.round(resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum() * 100.0) / 100.0;
 	}
 	
 	//para test---------------------------------------
@@ -63,6 +53,18 @@ public class Envio {
 		return id;
 	}
 	
+	//cambia de estado al envio y si tiene donacion tambien
+	public void cambiarEstado(String estado) {
+		 this.setEstado(estado);
+		if (this.donacion != null) {
+			donacion.cambiarEstado(estado);
+		}
+	}
+	
+	//Este metodo obtiene el peso del envio sumando el resumen de envio y le reduce los decimales
+		public double obtenerElPesoDelEnvio() {
+			return Math.round(resumenEnvio.stream().mapToDouble(ResumenEnvio::getKilos).sum() * 100.0) / 100.0;
+		}
 	
 	
 }

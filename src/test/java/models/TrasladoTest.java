@@ -2,12 +2,15 @@ package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TrasladoTest {
-	Traslado traslado;
-	Envio envio;
+	private Traslado traslado, trasladoTest;
+	private Envio envio;
 	
 	@BeforeEach
 	public void setup() {
@@ -15,18 +18,22 @@ class TrasladoTest {
 		traslado=new Traslado("se traslada a un comedor", envio,null/*fecha*/ , 12.1); 
 	}
 	
+	
 	@Test
-	public void testGetDistancia() {
-		assertEquals(traslado.getDistancia(), 12.1);
+	public void testConstructor() {
+		this.trasladoTest = new Traslado("comentario de traslado", envio, LocalDate.of(2023, 2, 1), 5.0);
+		assertEquals(this.trasladoTest.getComentario(), "comentario de traslado");
+		assertEquals(this.trasladoTest.getEnvio(), envio);
+		assertEquals(this.trasladoTest.getFechaAsignacion(), LocalDate.now());
+		assertEquals(this.trasladoTest.getFechaTraslado(), LocalDate.of(2023, 2, 1));
+		assertEquals(this.trasladoTest.getDistancia(), 5.0);
 	}
-	@Test
-	public void testGetEnvio() {
-		assertEquals(traslado.getEnvio(), envio);
-	}
+	
 	@Test
 	public void testConfirmarTraslado() {
 		assertEquals(traslado.getEnvio().getEstado(), "pendiente de retiro");
-		assertNotEquals(traslado.getEnvio().getEstado(), "no entregado");
+		this.traslado.confirmarTraslado();
+		assertEquals(this.traslado.getEnvio().getEstado(), "entregado");
 	}
 	
 	@Test

@@ -2,7 +2,7 @@ package models;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class DonacionTest {
 	
 	Donacion donacion;
-	Date fecha;
+	LocalDate fecha;
 	
 	@BeforeEach
 	public void setup() {

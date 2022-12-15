@@ -1,12 +1,16 @@
 package models;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;import java.util.stream.Collector;
+=======
+import java.util.List;
+import java.util.stream.Collector;
+>>>>>>> 762b58cd02a2058369d903fe5f079bae46a18b74
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 public class OrganizacionDonante {
 
 	
@@ -61,7 +65,7 @@ public class OrganizacionDonante {
 	//retorna una lista de voluntarios con vehiculos que tengan el suficiente espacio para el volumen dado
 	public List<Voluntario> getVoluntariosParaTraslado(Volumen volumen){
 		List<Voluntario>lista = getVoluntariosConVehiculo();		
-		return lista.stream().filter(x -> x.getVehiculo().getVolumen() < volumen.getVolumen()).collect(Collectors.toList());
+		return lista.stream().filter(x -> x.getVehiculo().getCapacidad() < volumen.getVolumen()).collect(Collectors.toList());
 	}
 	
 	

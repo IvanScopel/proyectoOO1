@@ -10,15 +10,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class VoluntarioTest {
-	Voluntario voluntario;
+	private Voluntario voluntario, voluntarioTest;
 
-	Traslado traslado1,traslado2,traslado3,traslado4,traslado5;
+	private Traslado traslado1,traslado2,traslado3,traslado4,traslado5;
 	
-	Envio envio1,envio2,envio3,envio4,envio5;
+	private Envio envio1,envio2,envio3,envio4,envio5;
 	
-	Vehiculo vehiculo,vehiculo2;
+	private Vehiculo vehiculo,vehiculo2;
 
-	List<Traslado> listaDeTraslado;
+	private List<Traslado> listaDeTraslado;
 	private ResumenEnvio resumen1,resumen2,resumen3;
 	
 	
@@ -30,7 +30,7 @@ class VoluntarioTest {
 		vehiculo=new Vehiculo("fiat", "fiorino", "lmk239", null/*volumen*/);
 		vehiculo2=new Vehiculo("ford", "falcon", "lfd639", null/*volumen*/);
 		
-		voluntario=new Voluntario("Juan", "000000000","a@a", "2214333333", "en el barrrio", vehiculo);
+		voluntario=new Voluntario("Juan", "000000000","a@a", "2214333333", "13 y 32", vehiculo);
 		//-------------------------------listados de resumenes ------
 		listaResumen1=new ArrayList<ResumenEnvio>();
 		//-------------------------------
@@ -59,9 +59,8 @@ class VoluntarioTest {
 		voluntario.asignarTraslado(traslado2);
 		voluntario.asignarTraslado(traslado3);
 		voluntario.asignarTraslado(traslado4);
-		voluntario.asignarTraslado(traslado5);
-		
-		voluntario.getTraslados().get(0).cambiarEstadoDeEnvio("estado diferente");
+
+		voluntario.getTraslados().get(0).cambiarEstadoDeEnvio("entregado");
 		
 		listaDeTraslado=new ArrayList<Traslado>();
 		
@@ -74,39 +73,38 @@ class VoluntarioTest {
 		
 		
 	}
+	
+	
+	@Test
+	public void testConstructor() {
+		this.voluntarioTest = new Voluntario("nombreTest", "12345678", "mail@example", "2211112222", "direccion 123", this.vehiculo);
+		assertEquals(this.voluntarioTest.getNombre(), "nombreTest");
+		assertEquals(this.voluntarioTest.getDni(), "12345678");
+		assertEquals(this.voluntarioTest.getEmail(), "mail@example");
+		assertEquals(this.voluntarioTest.getTelefono(), "2211112222");
+		assertEquals(this.voluntarioTest.getDireccion_estable(), "direccion 123");
+		assertEquals(this.voluntarioTest.getVehiculo(),this.vehiculo);
+		assertEquals(this.voluntarioTest.getInsignias().size(),0);
+		assertEquals(this.voluntarioTest.getPuntuacion(),0);
+		assertEquals(this.voluntarioTest.getTraslados().size(),0);
+	}
+	
 	@Test
 	public void testGetTrasladosPendientes() {
-		
-		assertEquals(voluntario.getTrasladosPendientes().size(),4);
-		
+		assertEquals(voluntario.getTrasladosPendientes().size(),3);
 	}
 	
-	@Test
-	public void testGetVehiculo() {
-		assertEquals(vehiculo, voluntario.getVehiculo());
-		assertNotEquals(vehiculo2, voluntario.getVehiculo());
-	}
-	
-	@Test
-	public void testGetPuntuacion() {
-		assertEquals(voluntario.getPuntuacion(),0 );
-		this.voluntario.asignarPuntos(traslado1);
-		assertEquals(voluntario.getPuntuacion(),228 );
-	}
 	
 	@Test
 	public void testAsignarTraslado() {
-		assertTrue(voluntario.getTraslados().contains(traslado1));
+		voluntario.asignarTraslado(traslado5);
+		assertTrue(voluntario.getTraslados().contains(traslado5));
 	}
 	
-	@Test
-	public void testGetTraslados() {
-		assertTrue(voluntario.getTraslados().containsAll(listaDeTraslado));
-	}
 	
 	@Test
 	public void testAsignarPuntos() {
-		assertNotEquals(voluntario.getPuntuacion(),228);
+		assertEquals(voluntario.getPuntuacion(),0);
 		this.voluntario.asignarPuntos(traslado1);
 		assertEquals(voluntario.getPuntuacion(),228);
 	}

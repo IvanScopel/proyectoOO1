@@ -1,18 +1,18 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Traslado {
 	private String comentario;
-	private Date fechaAsignacion;
-	private Date fechaTraslado;
-	private Date trasladoEfectuado;
+	private LocalDate fechaAsignacion;
+	private LocalDate fechaTraslado;
+	private LocalDate trasladoEfectuado;
 	private Envio envio;
 	private Double distancia;
 	//el volumen lo saca de envio
-	public Traslado(String comentario, Envio envio, Date fechaTraslado, Double distancia) {
+	public Traslado(String comentario, Envio envio, LocalDate fechaTraslado, Double distancia) {
 		this.comentario = comentario;
-		this.fechaAsignacion = new Date();
+		this.fechaAsignacion = LocalDate.now();
 		this.fechaTraslado = fechaTraslado;
 		this.envio = envio;
 		this.distancia= distancia;
@@ -34,6 +34,24 @@ public class Traslado {
 	public Double getDistancia() {
 		return distancia;
 	}
+
+	public String getComentario() {
+		return comentario;
+	}
+
+	public LocalDate getFechaAsignacion() {
+		return fechaAsignacion;
+	}
+
+	public LocalDate getFechaTraslado() {
+		return fechaTraslado;
+	}
+
+	public LocalDate getTrasladoEfectuado() {
+		return trasladoEfectuado;
+	}
+	
+	
 	
 	
 	
